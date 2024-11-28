@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+            <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+            <meta http-equiv="Pragma" content="no-cache">
+            <meta http-equiv="Expires" content="0">
+        
+
+        <!-- Playground metadata -->
+        <title>weav.ai developer documentation</title>
+        <meta name="description" content="weav.ai provides a number of useful and abstracted REST API’s to interact with the platform that make it easy and convenient to build your own workflows and functionality.">
+        <meta itemprop="name" content="weav.ai developer documentation">
+        <meta name="description" itemprop="description" content="weav.ai provides a number of useful and abstracted REST API’s to interact with the platform that make it easy and convenient to build your own workflows and functionality.">
+        <meta name="application-name" content="weav.ai developer documentation">
+        
+
+        <!-- Favicons -->
+        
+        
+        
+            
+            
+            
+            
+            
+            
+            
+                
+                    <link rel="icon" type="image/png" href="http://localhost:4000/assets/libdoc/img/weav/playground-android-chrome-512x512.png">
+                
+            
+        
+        
+        <meta name="msapplication-TileColor" content="#FDFDFD">
+        <meta name="theme-color" content="#FDFDFD">
+
+        <!-- Microsoft -->
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="msapplication-starturl" content="http://localhost:4000/assets/libdoc/playground.html">
+        <meta name="msapplication-tooltip" content="weav.ai developer documentation">
+        <meta name="msapplication-TileColor" content="#FDFDFD">
+
+        <!-- Open Graph -->
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="http://localhost:4000/assets/libdoc/playground.html">
+        <meta property="og:title" content="weav.ai developer documentation">
+        <meta property="og:description" content="weav.ai provides a number of useful and abstracted REST API’s to interact with the platform that make it easy and convenient to build your own workflows and functionality.">
+        
+            
+                <meta property="og:image" content="http://localhost:4000/assets/libdoc/img/meta-image-playground.jpg">
+            
+        
+        
+        <!-- Twitter -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="weav.ai developer documentation">
+        <meta name="twitter:description" content="weav.ai provides a number of useful and abstracted REST API’s to interact with the platform that make it easy and convenient to build your own workflows and functionality.">
+        <meta name="twitter:url" content="http://localhost:4000/assets/libdoc/playground.html">
+        
+            
+                <meta name="twitter:image" content="http://localhost:4000/assets/libdoc/img/meta-image-playground.jpg">
+            
+        
+
+        <!-- iOS -->
+        <meta name="apple-mobile-web-app-title" content="weav.ai developer documentation">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="#FDFDFD">
+
+        <!-- Android -->
+        <meta name="theme-color" content="#FDFDFD">
+        <meta name="color-scheme" content="light">
+        <meta name="mobile-web-app-capable" content="yes">
+        
+        
+        
+    </head>
+    <body>
+        
+        <script type="text/javascript">
+            function isJson(str) {
+                try {
+                    return JSON.parse(str);
+                } catch (e) {
+                    return false;
+                }
+            }
+            function isBase64(str) {
+                try {
+                    return atob(str);
+                } catch (e) {
+                    return false;
+                }
+            }
+            let hash = window.location.hash;
+            if (hash != '') {
+                hash = hash.replace('#', '');
+                if (isBase64(hash)) {
+                    const stringifiedSentObject = atob(hash);
+                    if (isJson(stringifiedSentObject)) {
+                        const sentObject = JSON.parse(stringifiedSentObject);
+                        document.body.insertAdjacentHTML('afterbegin', sentObject.content);
+                        // console.log(sentObject.options);
+                        // Sets the optional title of the Playground
+                        document.title = sentObject.options.title;
+                    }
+                }
+            }
+            // console.log('HTML included');
+        </script>
+        
+        
+    </body>
+</html>

@@ -1,0 +1,2015 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" itemscope itemtype="https://schema.org/WebPage" prefix="og:http://ogp.me/ns#">
+    <head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+        <meta http-equiv="Pragma" content="no-cache">
+        <meta http-equiv="Expires" content="0">
+    
+
+    <!-- LibDoc metadata -->
+    <title>Documents</title>
+    <meta name="description" content="Learn how to interact with and manage documents using the Weav.ai platform. This guide covers uploading, retrieving, analyzing and more.">
+    <meta itemprop="name" content="Documents">
+    <meta name="description" itemprop="description" content="Learn how to interact with and manage documents using the Weav.ai platform. This guide covers uploading, retrieving, analyzing and more.">
+    <meta name="application-name" content="Documents">
+    
+
+    <!-- Favicons -->
+    
+    
+    
+        
+        
+        
+        
+        
+        
+        
+            
+                <link rel="icon" type="image/png" href="http://localhost:4000/assets/libdoc/img/weav/favicon-32x32.png">
+            
+        
+    
+    
+    <meta name="msapplication-TileColor" content="#123456">
+    <meta name="theme-color" content="#123456">
+
+    <!-- Microsoft -->
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="msapplication-starturl" content="http://localhost:4000/docs/platform/scripts/documents.html">
+    <meta name="msapplication-tooltip" content="Documents">
+    <meta name="msapplication-TileColor" content="#123456">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://localhost:4000/docs/platform/scripts/documents.html">
+    <meta property="og:title" content="Documents">
+    <meta property="og:description" content="Learn how to interact with and manage documents using the Weav.ai platform. This guide covers uploading, retrieving, analyzing and more.">
+    
+        
+            <meta property="og:image" content="http://localhost:4000/assets/libdoc/img/libdoc.png">
+        
+    
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Documents">
+    <meta name="twitter:description" content="Learn how to interact with and manage documents using the Weav.ai platform. This guide covers uploading, retrieving, analyzing and more.">
+    <meta name="twitter:url" content="http://localhost:4000/docs/platform/scripts/documents.html">
+    
+        
+            <meta name="twitter:image" content="http://localhost:4000/assets/libdoc/img/libdoc.png">
+        
+    
+
+    <!-- iOS -->
+    <meta name="apple-mobile-web-app-title" content="Documents">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#123456">
+
+    <!-- Android -->
+    <meta name="theme-color" content="#123456">
+    <meta name="color-scheme" content="light">
+    <meta name="mobile-web-app-capable" content="yes">
+    
+    <!-- Style sheets -->
+    <link rel="stylesheet" href="/assets/libdoc/css/normalize.css">
+    <link rel="stylesheet" href="/assets/libdoc/fonts/icomoon/style.css">
+    <link rel="stylesheet" href="/assets/libdoc/css/libdoc.css">
+
+    <!-- Prism syntax highlighter -->
+    
+        <link rel="stylesheet" href="http://localhost:4000/assets/libdoc/css/prism/prism-weav.css">
+    
+    
+        <style>
+            code[class*="language-"], pre[class*="language-"] {
+                font-size: 0.9em;
+                line-height: 1.4em;
+                font-family: var(--sg-font-family-monospace);
+            }
+        </style>
+    
+
+    <!-- Head scripts -->
+    <script type="text/javascript" src="/assets/libdoc/js/jquery-3.5.1.slim.min.js"></script>
+
+    <!-- LibDoc config -->
+    <script>
+        window.site = {
+            title: 'weav.ai developer documentation',
+            description: 'weav.ai provides a number of useful and abstracted REST API’s to interact with the platform that make it easy and convenient to build your own workflows and functionality.',
+            url: 'http://localhost:4000',
+            baseurl: '',
+            playground: {
+                min_height: '300px',
+                stylesheets: [
+                    
+                ],
+                scripts_head: [
+                    
+                ],
+                scripts_body: [
+                    
+                ]
+            }
+        }
+    </script>
+</head>
+
+    <body class="u-bc-primary-edge">
+        <div class="c-grid m-nowrap">
+            
+<div    class="c-position m-fixed m-top-left u-bc-primary-edge u-w-100 u-h-100 u-translucid u-z-100 m-anchor-top-right" 
+        u-none="xl"
+        id="libdoc-sidebar-overlay"
+        onclick="sidebar();"></div>
+<nav    class="c-position m-top-left u-z-100 u-h-100vh u-bc-primary-max u-bb-thin-dashed-alt m-anchor-top-right--sm m-anchor-top-right--md" 
+        m-fw-medium="md,xl"
+        u-fixed="sm,md" 
+        u-sticky="xl"
+        id="libdoc-sidebar">
+    <div class="c-position m-absolute m-top-0 m-right-0 u-h-100 u-bl-thin-dashed-alt" style="width:1px;"></div>
+    <button class="c-btn c-position m-absolute m-top-right m-anchor-top-left u-z-12 u-p-sm" 
+            u-none="xl" 
+            onclick="sidebar()">
+        <span class="i-menu u-fs-md"></span>
+    </button>
+    <ul id="libdoc-sidebar-menu" class="u-m-none u-p-none u-ls-none u-mh-100vh u-o-auto u-pb-xxl">
+        <li>
+            <a rel="author" href="http://localhost:4000" class="c-btn m-translucid m-block-right u-p-md">
+                
+                    <img    src="http://localhost:4000/assets/libdoc/img/weav/android-chrome-512x512.png" 
+                            
+                                style="max-height:40px"
+                            
+                            alt="weav.ai developer documentation">
+                
+            </a>
+        </li>
+        
+            
+                <li id="libdoc-sidebar-item-search">
+                    <form class="c-form" action="/assets/libdoc/search.html" method="get">
+                        <input  type="search" 
+                                id="libdoc-search-box" 
+                                name="query" 
+                                class="u-bl-none u-bt-thin-dashed-alt u-br-none u-bb-none u-bg-search"
+                                u-fs-xs="sm,md"
+                                u-p-xs="sm,md">
+                        <label for="libdoc-search-box" u-fs-xs="sm">Search</label>
+                        <input type="submit" value="Search" class="u-none">
+                    </form>
+                </li>
+            
+            <!-- 
+
+
+
+
+    
+    
+        <li class="c-grid m-right u-bt-thin-dashed-alt ">
+            <div class="u-p-xxs u-pr-sm u-pl-sm u-fs-xs u-bc-primary-edge u-lh-base u-bl-thin-dashed-alt u-bb-thin-dashed-alt c-text m-ff-monospace m-nowrap u-c-primary-alt" u-fs-xxs="sm">
+                Platform tutorials
+            </div>
+        </li>
+        
+    
+    
+    
+        <li class="u-relative u-o-hidden libdoc-sidebar-item ">
+            
+            <a  href="/docs/platform/tutorials/one.html"
+                class="c-btn m-translucid m-block-right m-ff-lead u-ta-right  "
+                u-fs-xs="sm,md"
+                u-p-xs="sm,md"
+                data-iframe-mode=""
+                data-category="Platform tutorials">
+                
+                    Documents and Folders
+                
+            </a>
+        </li>
+        
+    
+
+    
+    
+        <li class="c-grid m-right u-bt-thin-dashed-alt u-mt-xs">
+            <div class="u-p-xxs u-pr-sm u-pl-sm u-fs-xs u-bc-primary-edge u-lh-base u-bl-thin-dashed-alt u-bb-thin-dashed-alt c-text m-ff-monospace m-nowrap u-c-primary-alt" u-fs-xxs="sm">
+                Scripts
+            </div>
+        </li>
+        
+    
+    
+    
+        <li class="u-relative u-o-hidden libdoc-sidebar-item ">
+            
+            <a  href="/docs/platform/scripts/setup.html"
+                class="c-btn m-translucid m-block-right m-ff-lead u-ta-right  "
+                u-fs-xs="sm,md"
+                u-p-xs="sm,md"
+                data-iframe-mode=""
+                data-category="Scripts">
+                
+                    Setup
+                
+            </a>
+        </li>
+        
+    
+
+    
+    
+    
+    
+        <li class="u-relative u-o-hidden libdoc-sidebar-item libdoc-sidebar-current-item">
+            
+            <a  href="/docs/platform/scripts/documents.html"
+                class="c-btn m-translucid m-block-right u-br-large-solid u-ta-right  "
+                u-fs-xs="sm,md"
+                u-p-xs="sm,md"
+                data-iframe-mode=""
+                data-category="Scripts">
+                
+                    Documents
+                
+            </a>
+        </li>
+        
+    
+
+    
+    
+    
+    
+        <li class="u-relative u-o-hidden libdoc-sidebar-item ">
+            
+            <a  href="/docs/platform/scripts/folders.html"
+                class="c-btn m-translucid m-block-right m-ff-lead u-ta-right  "
+                u-fs-xs="sm,md"
+                u-p-xs="sm,md"
+                data-iframe-mode=""
+                data-category="Scripts">
+                
+                    Folders
+                
+            </a>
+        </li>
+        
+    
+
+    
+    
+    
+    
+        <li class="u-relative u-o-hidden libdoc-sidebar-item ">
+            
+            <a  href="/docs/platform/scripts/forms.html"
+                class="c-btn m-translucid m-block-right m-ff-lead u-ta-right  "
+                u-fs-xs="sm,md"
+                u-p-xs="sm,md"
+                data-iframe-mode=""
+                data-category="Scripts">
+                
+                    Forms
+                
+            </a>
+        </li>
+        
+    
+
+    
+    
+    
+    
+        <li class="u-relative u-o-hidden libdoc-sidebar-item ">
+            
+            <a  href="/docs/platform/scripts/agents.html"
+                class="c-btn m-translucid m-block-right m-ff-lead u-ta-right  "
+                u-fs-xs="sm,md"
+                u-p-xs="sm,md"
+                data-iframe-mode=""
+                data-category="Scripts">
+                
+                    Agents
+                
+            </a>
+        </li>
+        
+    
+
+    
+    
+    
+    
+        <li class="u-relative u-o-hidden libdoc-sidebar-item ">
+            
+            <a  href="/docs/platform/scripts/workflows.html"
+                class="c-btn m-translucid m-block-right m-ff-lead u-ta-right  "
+                u-fs-xs="sm,md"
+                u-p-xs="sm,md"
+                data-iframe-mode=""
+                data-category="Scripts">
+                
+                    Workflows
+                
+            </a>
+        </li>
+        
+    
+
+    
+    
+        <li class="c-grid m-right u-bt-thin-dashed-alt u-mt-xs">
+            <div class="u-p-xxs u-pr-sm u-pl-sm u-fs-xs u-bc-primary-edge u-lh-base u-bl-thin-dashed-alt u-bb-thin-dashed-alt c-text m-ff-monospace m-nowrap u-c-primary-alt" u-fs-xxs="sm">
+                Developer library
+            </div>
+        </li>
+        
+    
+    
+    
+        <li class="u-relative u-o-hidden libdoc-sidebar-item ">
+            
+            <a  href="/docs/developer_library/setup.html"
+                class="c-btn m-translucid m-block-right m-ff-lead u-ta-right  "
+                u-fs-xs="sm,md"
+                u-p-xs="sm,md"
+                data-iframe-mode=""
+                data-category="Developer library">
+                
+                    Installation guide
+                
+            </a>
+        </li>
+        
+    
+
+    
+    
+    
+    
+        <li class="u-relative u-o-hidden libdoc-sidebar-item ">
+            
+            <a  href="/docs/developer_library/workflow_operations.html"
+                class="c-btn m-translucid m-block-right m-ff-lead u-ta-right  "
+                u-fs-xs="sm,md"
+                u-p-xs="sm,md"
+                data-iframe-mode=""
+                data-category="Developer library">
+                
+                    WorkflowOperations
+                
+            </a>
+        </li>
+        
+    
+
+    
+    
+    
+    
+        <li class="u-relative u-o-hidden libdoc-sidebar-item ">
+            
+            <a  href="/docs/developer_library/folder_operations.html"
+                class="c-btn m-translucid m-block-right m-ff-lead u-ta-right  "
+                u-fs-xs="sm,md"
+                u-p-xs="sm,md"
+                data-iframe-mode=""
+                data-category="Developer library">
+                
+                    FolderOperations
+                
+            </a>
+        </li>
+        
+    
+
+    
+    
+    
+    
+        <li class="u-relative u-o-hidden libdoc-sidebar-item ">
+            
+            <a  href="/docs/developer_library/form_operations.html"
+                class="c-btn m-translucid m-block-right m-ff-lead u-ta-right  "
+                u-fs-xs="sm,md"
+                u-p-xs="sm,md"
+                data-iframe-mode=""
+                data-category="Developer library">
+                
+                    FormOperations
+                
+            </a>
+        </li>
+        
+    
+
+    
+    
+    
+    
+        <li class="u-relative u-o-hidden libdoc-sidebar-item ">
+            
+            <a  href="/docs/developer_library/document_operations.html"
+                class="c-btn m-translucid m-block-right m-ff-lead u-ta-right  "
+                u-fs-xs="sm,md"
+                u-p-xs="sm,md"
+                data-iframe-mode=""
+                data-category="Developer library">
+                
+                    DocumentOperations
+                
+            </a>
+        </li>
+        
+    
+
+    
+    
+    
+    
+        <li class="u-relative u-o-hidden libdoc-sidebar-item ">
+            
+            <a  href="/docs/developer_library/chat_operations.html"
+                class="c-btn m-translucid m-block-right m-ff-lead u-ta-right  "
+                u-fs-xs="sm,md"
+                u-p-xs="sm,md"
+                data-iframe-mode=""
+                data-category="Developer library">
+                
+                    ChatOperations
+                
+            </a>
+        </li>
+        
+    
+
+    
+    
+    
+    
+        <li class="u-relative u-o-hidden libdoc-sidebar-item ">
+            
+            <a  href="/docs/developer_library/agent_operations.html"
+                class="c-btn m-translucid m-block-right m-ff-lead u-ta-right  "
+                u-fs-xs="sm,md"
+                u-p-xs="sm,md"
+                data-iframe-mode=""
+                data-category="Developer library">
+                
+                    AgentOperations
+                
+            </a>
+        </li>
+        
+    
+
+    
+    
+    
+    
+        <li class="u-relative u-o-hidden libdoc-sidebar-item ">
+            
+            <a  href="/docs/developer_library/action_operations.html"
+                class="c-btn m-translucid m-block-right m-ff-lead u-ta-right  "
+                u-fs-xs="sm,md"
+                u-p-xs="sm,md"
+                data-iframe-mode=""
+                data-category="Developer library">
+                
+                    ActionOperations
+                
+            </a>
+        </li>
+        
+    
+ -->
+
+<!-- 
+
+
+
+
+    
+    
+        
+        <li class="c-grid m-right u-bt-thin-dashed-alt ">
+            <a href="" 
+               class="u-p-xxs u-pr-sm u-pl-sm u-fs-xs u-bc-primary-edge u-lh-base u-bl-thin-dashed-alt u-bb-thin-dashed-alt c-text m-ff-monospace m-nowrap u-c-primary-alt hover:u-bc-primary-fade w-full block cursor-pointer" 
+               u-fs-xxs="sm"
+               style="cursor: pointer; text-decoration: none;">
+                Platform tutorials
+            </a>
+        </li>
+        
+    
+    
+    
+        <li class="u-relative u-o-hidden libdoc-sidebar-item ">
+            
+            <a  href="/docs/platform/tutorials/one.html"
+                class="c-btn m-translucid m-block-right m-ff-lead u-ta-right  "
+                u-fs-xs="sm,md"
+                u-p-xs="sm,md"
+                data-iframe-mode=""
+                data-category="Platform tutorials">
+                
+                    Documents and Folders
+                
+            </a>
+        </li>
+        
+    
+
+    
+    
+        
+        <li class="c-grid m-right u-bt-thin-dashed-alt u-mt-xs">
+            <a href="" 
+               class="u-p-xxs u-pr-sm u-pl-sm u-fs-xs u-bc-primary-edge u-lh-base u-bl-thin-dashed-alt u-bb-thin-dashed-alt c-text m-ff-monospace m-nowrap u-c-primary-alt hover:u-bc-primary-fade w-full block cursor-pointer" 
+               u-fs-xxs="sm"
+               style="cursor: pointer; text-decoration: none;">
+                Scripts
+            </a>
+        </li>
+        
+    
+    
+    
+        <li class="u-relative u-o-hidden libdoc-sidebar-item ">
+            
+            <a  href="/docs/platform/scripts/setup.html"
+                class="c-btn m-translucid m-block-right m-ff-lead u-ta-right  "
+                u-fs-xs="sm,md"
+                u-p-xs="sm,md"
+                data-iframe-mode=""
+                data-category="Scripts">
+                
+                    Setup
+                
+            </a>
+        </li>
+        
+    
+
+    
+    
+    
+    
+        <li class="u-relative u-o-hidden libdoc-sidebar-item libdoc-sidebar-current-item">
+            
+            <a  href="/docs/platform/scripts/documents.html"
+                class="c-btn m-translucid m-block-right u-br-large-solid u-ta-right  "
+                u-fs-xs="sm,md"
+                u-p-xs="sm,md"
+                data-iframe-mode=""
+                data-category="Scripts">
+                
+                    Documents
+                
+            </a>
+        </li>
+        
+    
+
+    
+    
+    
+    
+        <li class="u-relative u-o-hidden libdoc-sidebar-item ">
+            
+            <a  href="/docs/platform/scripts/folders.html"
+                class="c-btn m-translucid m-block-right m-ff-lead u-ta-right  "
+                u-fs-xs="sm,md"
+                u-p-xs="sm,md"
+                data-iframe-mode=""
+                data-category="Scripts">
+                
+                    Folders
+                
+            </a>
+        </li>
+        
+    
+
+    
+    
+    
+    
+        <li class="u-relative u-o-hidden libdoc-sidebar-item ">
+            
+            <a  href="/docs/platform/scripts/forms.html"
+                class="c-btn m-translucid m-block-right m-ff-lead u-ta-right  "
+                u-fs-xs="sm,md"
+                u-p-xs="sm,md"
+                data-iframe-mode=""
+                data-category="Scripts">
+                
+                    Forms
+                
+            </a>
+        </li>
+        
+    
+
+    
+    
+    
+    
+        <li class="u-relative u-o-hidden libdoc-sidebar-item ">
+            
+            <a  href="/docs/platform/scripts/agents.html"
+                class="c-btn m-translucid m-block-right m-ff-lead u-ta-right  "
+                u-fs-xs="sm,md"
+                u-p-xs="sm,md"
+                data-iframe-mode=""
+                data-category="Scripts">
+                
+                    Agents
+                
+            </a>
+        </li>
+        
+    
+
+    
+    
+    
+    
+        <li class="u-relative u-o-hidden libdoc-sidebar-item ">
+            
+            <a  href="/docs/platform/scripts/workflows.html"
+                class="c-btn m-translucid m-block-right m-ff-lead u-ta-right  "
+                u-fs-xs="sm,md"
+                u-p-xs="sm,md"
+                data-iframe-mode=""
+                data-category="Scripts">
+                
+                    Workflows
+                
+            </a>
+        </li>
+        
+    
+
+    
+    
+        
+        <li class="c-grid m-right u-bt-thin-dashed-alt u-mt-xs">
+            <a href="" 
+               class="u-p-xxs u-pr-sm u-pl-sm u-fs-xs u-bc-primary-edge u-lh-base u-bl-thin-dashed-alt u-bb-thin-dashed-alt c-text m-ff-monospace m-nowrap u-c-primary-alt hover:u-bc-primary-fade w-full block cursor-pointer" 
+               u-fs-xxs="sm"
+               style="cursor: pointer; text-decoration: none;">
+                Developer library
+            </a>
+        </li>
+        
+    
+    
+    
+        <li class="u-relative u-o-hidden libdoc-sidebar-item ">
+            
+            <a  href="/docs/developer_library/setup.html"
+                class="c-btn m-translucid m-block-right m-ff-lead u-ta-right  "
+                u-fs-xs="sm,md"
+                u-p-xs="sm,md"
+                data-iframe-mode=""
+                data-category="Developer library">
+                
+                    Installation guide
+                
+            </a>
+        </li>
+        
+    
+
+    
+    
+    
+    
+        <li class="u-relative u-o-hidden libdoc-sidebar-item ">
+            
+            <a  href="/docs/developer_library/workflow_operations.html"
+                class="c-btn m-translucid m-block-right m-ff-lead u-ta-right  "
+                u-fs-xs="sm,md"
+                u-p-xs="sm,md"
+                data-iframe-mode=""
+                data-category="Developer library">
+                
+                    WorkflowOperations
+                
+            </a>
+        </li>
+        
+    
+
+    
+    
+    
+    
+        <li class="u-relative u-o-hidden libdoc-sidebar-item ">
+            
+            <a  href="/docs/developer_library/folder_operations.html"
+                class="c-btn m-translucid m-block-right m-ff-lead u-ta-right  "
+                u-fs-xs="sm,md"
+                u-p-xs="sm,md"
+                data-iframe-mode=""
+                data-category="Developer library">
+                
+                    FolderOperations
+                
+            </a>
+        </li>
+        
+    
+
+    
+    
+    
+    
+        <li class="u-relative u-o-hidden libdoc-sidebar-item ">
+            
+            <a  href="/docs/developer_library/form_operations.html"
+                class="c-btn m-translucid m-block-right m-ff-lead u-ta-right  "
+                u-fs-xs="sm,md"
+                u-p-xs="sm,md"
+                data-iframe-mode=""
+                data-category="Developer library">
+                
+                    FormOperations
+                
+            </a>
+        </li>
+        
+    
+
+    
+    
+    
+    
+        <li class="u-relative u-o-hidden libdoc-sidebar-item ">
+            
+            <a  href="/docs/developer_library/document_operations.html"
+                class="c-btn m-translucid m-block-right m-ff-lead u-ta-right  "
+                u-fs-xs="sm,md"
+                u-p-xs="sm,md"
+                data-iframe-mode=""
+                data-category="Developer library">
+                
+                    DocumentOperations
+                
+            </a>
+        </li>
+        
+    
+
+    
+    
+    
+    
+        <li class="u-relative u-o-hidden libdoc-sidebar-item ">
+            
+            <a  href="/docs/developer_library/chat_operations.html"
+                class="c-btn m-translucid m-block-right m-ff-lead u-ta-right  "
+                u-fs-xs="sm,md"
+                u-p-xs="sm,md"
+                data-iframe-mode=""
+                data-category="Developer library">
+                
+                    ChatOperations
+                
+            </a>
+        </li>
+        
+    
+
+    
+    
+    
+    
+        <li class="u-relative u-o-hidden libdoc-sidebar-item ">
+            
+            <a  href="/docs/developer_library/agent_operations.html"
+                class="c-btn m-translucid m-block-right m-ff-lead u-ta-right  "
+                u-fs-xs="sm,md"
+                u-p-xs="sm,md"
+                data-iframe-mode=""
+                data-category="Developer library">
+                
+                    AgentOperations
+                
+            </a>
+        </li>
+        
+    
+
+    
+    
+    
+    
+        <li class="u-relative u-o-hidden libdoc-sidebar-item ">
+            
+            <a  href="/docs/developer_library/action_operations.html"
+                class="c-btn m-translucid m-block-right m-ff-lead u-ta-right  "
+                u-fs-xs="sm,md"
+                u-p-xs="sm,md"
+                data-iframe-mode=""
+                data-category="Developer library">
+                
+                    ActionOperations
+                
+            </a>
+        </li>
+        
+    
+ -->
+
+
+
+
+
+
+
+<!-- Debug current mappings -->
+<!-- <script>
+const categoryMappings = {
+    "Scripts": "/docs/platform/intro.html",
+    "Platform tutorials": "/docs/platform/tutorials/intro.html",
+    "Developer library": "/docs/developer_library/intro.html"
+};
+console.log('Available category mappings:', categoryMappings);
+</script> -->
+
+
+    
+    
+        <li class="c-grid m-right u-bt-thin-dashed-alt ">
+            <a href="javascript:void(0)" 
+               class="u-p-xxs u-pr-sm u-pl-sm u-fs-xs u-bc-primary-edge u-lh-base u-bl-thin-dashed-alt u-bb-thin-dashed-alt c-text m-ff-monospace m-nowrap u-c-primary-alt hover:u-bc-primary-fade w-full block cursor-pointer" 
+               u-fs-xxs="sm"
+               style="cursor: pointer; text-decoration: none;"
+               data-category="Platform tutorials"
+               data-url="/docs/platform/tutorials/intro.html"
+               onclick="handleCategoryClick(this)">
+                Platform tutorials
+            </a>
+        </li>
+        
+    
+    
+    
+        <li class="u-relative u-o-hidden libdoc-sidebar-item ">
+            
+            <a  href="/docs/platform/tutorials/one.html"
+                class="c-btn m-translucid m-block-right m-ff-lead u-ta-right  "
+                u-fs-xs="sm,md"
+                u-p-xs="sm,md"
+                data-iframe-mode=""
+                data-category="Platform tutorials">
+                
+                    Documents and Folders
+                
+            </a>
+        </li>
+        
+    
+
+    
+    
+        <li class="c-grid m-right u-bt-thin-dashed-alt u-mt-xs">
+            <a href="javascript:void(0)" 
+               class="u-p-xxs u-pr-sm u-pl-sm u-fs-xs u-bc-primary-edge u-lh-base u-bl-thin-dashed-alt u-bb-thin-dashed-alt c-text m-ff-monospace m-nowrap u-c-primary-alt hover:u-bc-primary-fade w-full block cursor-pointer" 
+               u-fs-xxs="sm"
+               style="cursor: pointer; text-decoration: none;"
+               data-category="Scripts"
+               data-url="/docs/platform/intro.html"
+               onclick="handleCategoryClick(this)">
+                Scripts
+            </a>
+        </li>
+        
+    
+    
+    
+        <li class="u-relative u-o-hidden libdoc-sidebar-item ">
+            
+            <a  href="/docs/platform/scripts/setup.html"
+                class="c-btn m-translucid m-block-right m-ff-lead u-ta-right  "
+                u-fs-xs="sm,md"
+                u-p-xs="sm,md"
+                data-iframe-mode=""
+                data-category="Scripts">
+                
+                    Setup
+                
+            </a>
+        </li>
+        
+    
+
+    
+    
+    
+    
+        <li class="u-relative u-o-hidden libdoc-sidebar-item libdoc-sidebar-current-item">
+            
+            <a  href="/docs/platform/scripts/documents.html"
+                class="c-btn m-translucid m-block-right u-br-large-solid u-ta-right  "
+                u-fs-xs="sm,md"
+                u-p-xs="sm,md"
+                data-iframe-mode=""
+                data-category="Scripts">
+                
+                    Documents
+                
+            </a>
+        </li>
+        
+    
+
+    
+    
+    
+    
+        <li class="u-relative u-o-hidden libdoc-sidebar-item ">
+            
+            <a  href="/docs/platform/scripts/folders.html"
+                class="c-btn m-translucid m-block-right m-ff-lead u-ta-right  "
+                u-fs-xs="sm,md"
+                u-p-xs="sm,md"
+                data-iframe-mode=""
+                data-category="Scripts">
+                
+                    Folders
+                
+            </a>
+        </li>
+        
+    
+
+    
+    
+    
+    
+        <li class="u-relative u-o-hidden libdoc-sidebar-item ">
+            
+            <a  href="/docs/platform/scripts/forms.html"
+                class="c-btn m-translucid m-block-right m-ff-lead u-ta-right  "
+                u-fs-xs="sm,md"
+                u-p-xs="sm,md"
+                data-iframe-mode=""
+                data-category="Scripts">
+                
+                    Forms
+                
+            </a>
+        </li>
+        
+    
+
+    
+    
+    
+    
+        <li class="u-relative u-o-hidden libdoc-sidebar-item ">
+            
+            <a  href="/docs/platform/scripts/agents.html"
+                class="c-btn m-translucid m-block-right m-ff-lead u-ta-right  "
+                u-fs-xs="sm,md"
+                u-p-xs="sm,md"
+                data-iframe-mode=""
+                data-category="Scripts">
+                
+                    Agents
+                
+            </a>
+        </li>
+        
+    
+
+    
+    
+    
+    
+        <li class="u-relative u-o-hidden libdoc-sidebar-item ">
+            
+            <a  href="/docs/platform/scripts/workflows.html"
+                class="c-btn m-translucid m-block-right m-ff-lead u-ta-right  "
+                u-fs-xs="sm,md"
+                u-p-xs="sm,md"
+                data-iframe-mode=""
+                data-category="Scripts">
+                
+                    Workflows
+                
+            </a>
+        </li>
+        
+    
+
+    
+    
+        <li class="c-grid m-right u-bt-thin-dashed-alt u-mt-xs">
+            <a href="javascript:void(0)" 
+               class="u-p-xxs u-pr-sm u-pl-sm u-fs-xs u-bc-primary-edge u-lh-base u-bl-thin-dashed-alt u-bb-thin-dashed-alt c-text m-ff-monospace m-nowrap u-c-primary-alt hover:u-bc-primary-fade w-full block cursor-pointer" 
+               u-fs-xxs="sm"
+               style="cursor: pointer; text-decoration: none;"
+               data-category="Developer library"
+               data-url="/docs/developer_library/intro.html"
+               onclick="handleCategoryClick(this)">
+                Developer library
+            </a>
+        </li>
+        
+    
+    
+    
+        <li class="u-relative u-o-hidden libdoc-sidebar-item ">
+            
+            <a  href="/docs/developer_library/setup.html"
+                class="c-btn m-translucid m-block-right m-ff-lead u-ta-right  "
+                u-fs-xs="sm,md"
+                u-p-xs="sm,md"
+                data-iframe-mode=""
+                data-category="Developer library">
+                
+                    Installation guide
+                
+            </a>
+        </li>
+        
+    
+
+    
+    
+    
+    
+        <li class="u-relative u-o-hidden libdoc-sidebar-item ">
+            
+            <a  href="/docs/developer_library/workflow_operations.html"
+                class="c-btn m-translucid m-block-right m-ff-lead u-ta-right  "
+                u-fs-xs="sm,md"
+                u-p-xs="sm,md"
+                data-iframe-mode=""
+                data-category="Developer library">
+                
+                    WorkflowOperations
+                
+            </a>
+        </li>
+        
+    
+
+    
+    
+    
+    
+        <li class="u-relative u-o-hidden libdoc-sidebar-item ">
+            
+            <a  href="/docs/developer_library/folder_operations.html"
+                class="c-btn m-translucid m-block-right m-ff-lead u-ta-right  "
+                u-fs-xs="sm,md"
+                u-p-xs="sm,md"
+                data-iframe-mode=""
+                data-category="Developer library">
+                
+                    FolderOperations
+                
+            </a>
+        </li>
+        
+    
+
+    
+    
+    
+    
+        <li class="u-relative u-o-hidden libdoc-sidebar-item ">
+            
+            <a  href="/docs/developer_library/form_operations.html"
+                class="c-btn m-translucid m-block-right m-ff-lead u-ta-right  "
+                u-fs-xs="sm,md"
+                u-p-xs="sm,md"
+                data-iframe-mode=""
+                data-category="Developer library">
+                
+                    FormOperations
+                
+            </a>
+        </li>
+        
+    
+
+    
+    
+    
+    
+        <li class="u-relative u-o-hidden libdoc-sidebar-item ">
+            
+            <a  href="/docs/developer_library/document_operations.html"
+                class="c-btn m-translucid m-block-right m-ff-lead u-ta-right  "
+                u-fs-xs="sm,md"
+                u-p-xs="sm,md"
+                data-iframe-mode=""
+                data-category="Developer library">
+                
+                    DocumentOperations
+                
+            </a>
+        </li>
+        
+    
+
+    
+    
+    
+    
+        <li class="u-relative u-o-hidden libdoc-sidebar-item ">
+            
+            <a  href="/docs/developer_library/chat_operations.html"
+                class="c-btn m-translucid m-block-right m-ff-lead u-ta-right  "
+                u-fs-xs="sm,md"
+                u-p-xs="sm,md"
+                data-iframe-mode=""
+                data-category="Developer library">
+                
+                    ChatOperations
+                
+            </a>
+        </li>
+        
+    
+
+    
+    
+    
+    
+        <li class="u-relative u-o-hidden libdoc-sidebar-item ">
+            
+            <a  href="/docs/developer_library/agent_operations.html"
+                class="c-btn m-translucid m-block-right m-ff-lead u-ta-right  "
+                u-fs-xs="sm,md"
+                u-p-xs="sm,md"
+                data-iframe-mode=""
+                data-category="Developer library">
+                
+                    AgentOperations
+                
+            </a>
+        </li>
+        
+    
+
+    
+    
+    
+    
+        <li class="u-relative u-o-hidden libdoc-sidebar-item ">
+            
+            <a  href="/docs/developer_library/action_operations.html"
+                class="c-btn m-translucid m-block-right m-ff-lead u-ta-right  "
+                u-fs-xs="sm,md"
+                u-p-xs="sm,md"
+                data-iframe-mode=""
+                data-category="Developer library">
+                
+                    ActionOperations
+                
+            </a>
+        </li>
+        
+    
+
+
+<script>
+function handleCategoryClick(element) {
+    const category = element.getAttribute('data-category');
+    const url = element.getAttribute('data-url');
+    console.log('Clicked category:', category);
+    console.log('URL:', url);
+    
+    if (url) {
+        window.location.href = url;
+    } else {
+        console.log('No URL mapping found for category:', category);
+    }
+}
+</script>
+        
+    </ul>
+</nav>
+
+            <main class="m-grow m-w-1 c-grid m-nowrap m-center">
+    <div class="m-grow m-w-1 u-mw-main u-bc-primary-max u-b-thin-dashed-alt">
+        <header class="u-bb-thin-dashed-alt u-p-lg" u-p-sm="sm">
+            <h1 id="libdoc-page-title" class="u-mt-none u-mb-xs">Documents</h1>
+            <p class="u-fs-lg u-m-none u-lh-base" u-fs-md="sm">Learn how to interact with and manage documents using the Weav.ai platform. This guide covers uploading, retrieving, analyzing and more.
+                </p>
+        </header>
+        <div id="libdoc-content" class="u-p-lg u-p-sm--sm">
+            <h2 id="overview"><strong>Overview</strong></h2>
+<p>The Documents section provides functionalities to upload, manage, and extract insights from documents on the Weav.ai platform. This guide walks you through key operations such as creating documents, retrieving metadata, downloading forms, generating summaries, and analyzing page-level data. These tools are designed to streamline document workflows and improve efficiency.</p>
+
+<p><strong>Prerequisite</strong> - To get started, ensure your environment is properly configured by following the <a href="setup">Setup Guide</a>.</p>
+
+<hr />
+<h3 id="create-document">Create document</h3>
+
+<p>Upload a document from your local system to the copilot. Has the ability to upload documents into a folder.</p>
+
+<pre><code class="language-bash">python3 documents/documents/create_document.py --file_path "AAPL_10Q.pdf"
+</code></pre>
+
+<p><strong>Parameters:</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Parameter</strong></th>
+      <th><strong>Description</strong></th>
+      <th><strong>Required/Optional</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>file_path</td>
+      <td>The file path to your document on your local system</td>
+      <td>Required</td>
+    </tr>
+    <tr>
+      <td>folder_id</td>
+      <td>The ID of the folder that should hold the document. If it is not provided, the file will be uploaded but will not be inside any folder.</td>
+      <td>Optional</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Response:</strong></p>
+
+<p>Upon uploading, the document response should be as follows.</p>
+
+<pre><code class="language-bash">{
+   "ai_tags":[
+      
+   ],
+   "category":"",
+   "created_at":datetime.datetime(2024, 10, 3, 22, 14, 10, tzinfo=TzInfo(UTC)),
+   "download_url":"/doc-proc-service/local_store/google-oauth2|117349365869611297391/66ff1732927ce8c0ebda42bd/66ff1732927ce8c0ebda42bd",
+   "file_name":"AAPL_10Q.pdf",
+   "form_instances":"None",
+   "id":"66ff1732927ce8c0ebda42bd",
+   "in_folders":[
+      
+   ],
+   "media_type":"application/pdf",
+   "pages":[
+      
+   ],
+   "redacted_summary":"",
+   "size":654929,
+   "source":"application",
+   "status":"NEW",
+   "step_status":{
+      "FORM_EXTRACTION":{
+         "error":"",
+         "modified_at":datetime.datetime(2024, 10, 3, 22, 14, 10, tzinfo=TzInfo(UTC)),
+         "response":{
+            
+         },
+         "status":"NOT_STARTED"
+      }
+   },
+   "summary":"",
+   "summary_status":"",
+   "tags":[
+      
+   ],
+   "tenant_id":"",
+   "user_id":"google-oauth2|117349365869611297391"
+}
+</code></pre>
+
+<p>After the document has been uploaded, it undergoes <code>process_document_sensors</code>  workflow which may take a while.</p>
+
+<p>Once the processing is completed, you will notice that some fields from before are updated using information extracted from the document using the <code>Get Document</code> API</p>
+
+<hr />
+
+<h3 id="get-document">Get Document</h3>
+
+<p>Retrieve information about the uploaded document. Fields in this response might be empty initially but are completely filled once basic processing is completed</p>
+
+<p><strong>Parameters:</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Parameter</strong></th>
+      <th><strong>Description</strong></th>
+      <th><strong>Required/Optional</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>document_id</td>
+      <td>The unique identifier of the document</td>
+      <td>Required</td>
+    </tr>
+    <tr>
+      <td>fill_pages</td>
+      <td>If false pages will be empty</td>
+      <td>Optional (default: False)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Response:</strong></p>
+
+<pre><code class="language-bash">{
+   "id":"66ff1732927ce8c0ebda42bd",
+   "media_type":"application/pdf",
+   "download_url":"/doc-proc-service/local_store/google-oauth2|117349365869611297391/66ff1732927ce8c0ebda42bd/66ff1732927ce8c0ebda42bd",
+   "pages":[
+      
+   ],
+   "status":"AI_READY",
+   "file_name":"AAPL_10Q.pdf",
+   "created_at":"",
+   "size":654929,
+   "source":"application",
+   "category":"UNITED STATES SECURITIES AND EXCHANGE COMMISSION",
+   "summary":"",
+   "redacted_summary":"",
+   "summary_status":"",
+   "step_status":{
+      "FORM_EXTRACTION":{
+         "status":"DONE",
+         "modified_at":"",
+         "error":"",
+         "response":{
+            "name":"New",
+            "category":"UNITED STATES SECURITIES AND EXCHANGE COMMISSION",
+            "description":"A Test form",
+            "fields":[
+               {
+                  "identifier":"4b68933c-2432-4784-8b01-37a1803b72a0",
+                  "name":"new",
+                  "field_type":"Number",
+                  "description":"",
+                  "is_array":true,
+                  "fill_by_search":false,
+                  "value":[
+                     "0.00001",
+                     "1.375",
+                     .
+                     .
+                  ],
+                  "weav_page_number":[
+                     0,
+                     0,
+                     0,
+                     0,
+                     0,
+                     .
+                     .
+                  ]
+               }
+            ],
+            "is_shared":false,
+            "is_searchable":false,
+            "_id":"66ff076db1d0dfb13c99760f",
+            "user_id":"google-oauth2|117349365869611297391",
+            "created_at":"2024-10-03T21:06:53Z",
+            "form_id":"66ff076db1d0dfb13c99760f"
+         }
+      }
+   },
+   "in_folders":[
+      
+   ],
+   "tags":[
+      
+   ],
+   "ai_tags":[
+      
+   ],
+   "user_id":"google-oauth2|117349365869611297391",
+   "tenant_id":"",
+   "form_instances":"None"
+}
+</code></pre>
+
+<aside>
+💡
+
+You can observe that fields like `category` are updated once processing has finished.
+
+</aside>
+
+<hr />
+
+<h3 id="download-form-instance">Download form instance</h3>
+
+<p>Allows the user to download the extracted form</p>
+
+<pre><code class="language-bash">python3 documents/documents/download_form_instance.py --download_format "JSON" --document_id "66ff1732927ce8c0ebda42bd"
+</code></pre>
+
+<p><strong>Parameters:</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Parameter</strong></th>
+      <th><strong>Description</strong></th>
+      <th><strong>Required/Optional</strong></th>
+      <th><strong>Allowed values</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>document_id</td>
+      <td>The unique identifier of the document</td>
+      <td>Required</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>download_format</td>
+      <td>The format in which the results need to be viewed</td>
+      <td>Optional (default : “JSON”)</td>
+      <td>JSON, CSV</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Response:</strong></p>
+
+<p><code>--download_format = "JSON"</code></p>
+
+<pre><code class="language-bash">{
+   "doc_id":"66ff1732927ce8c0ebda42bd",
+   "form_id":"66ff076db1d0dfb13c99760f",
+   "new":[
+      "0.00001",
+      "1.375",
+      "0.000",
+      .
+      .
+      .
+    ]
+}
+</code></pre>
+
+<p><code>--download_format = "CSV"</code></p>
+
+<pre><code class="language-bash">                     doc_id                   form_id                                                new
+0  66ff1732927ce8c0ebda42bd  66ff076db1d0dfb13c99760f  ['0.00001', '1.375', '0.000', '0.875', '1.625'...
+</code></pre>
+
+<aside>
+💡
+
+Downloading form instance can only be done once form processing has been completed and form definition has been created.
+
+</aside>
+
+<aside>
+💡
+
+If form processing has not been run, you can run it by first [creating a form definition](https://www.notion.so/How-to-use-the-Developer-Scripts-10c5084286c5801bb388fbcc98dc5626?pvs=21) and using the [Run workflow](https://www.notion.so/How-to-use-the-Developer-Scripts-10c5084286c5801bb388fbcc98dc5626?pvs=21) script by passing `workflow_name` as `process_form_workflow` 
+
+</aside>
+
+<hr />
+
+<h3 id="get-document-categories">Get document categories</h3>
+
+<p>Retrieves a list of all categories present on the copilot, considering categories from all documents.</p>
+
+<pre><code class="language-bash">python3 documents/documents/get_document_categories.py
+</code></pre>
+
+<p><strong>Response:</strong></p>
+
+<pre><code class="language-bash">{
+   "categories":[
+      "ANNUAL REPORT",
+      "SECURITIES AND EXCHANGE COMMISSION",
+      "UNITED STATES SECURITIES AND EXCHANGE COMMISSION"
+   ]
+}
+</code></pre>
+
+<hr />
+
+<h3 id="get-document-tags">Get document tags</h3>
+
+<p>Retrieves a list of all tags present on the copilot, considering tags from all documents.</p>
+
+<pre><code class="language-bash">python3 documents/documents/get_document_tags.py
+</code></pre>
+
+<p><strong>Response:</strong></p>
+
+<pre><code class="language-bash">{'tags': [['apple']]}
+</code></pre>
+
+<hr />
+
+<h3 id="get-document-page-level-status">Get document page level status</h3>
+
+<p>Retrieves count of pages on which workflow has succeeded or failed.</p>
+
+<p><strong>Parameters:</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Parameter</strong></th>
+      <th><strong>Description</strong></th>
+      <th><strong>Required/Optional</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>document_id</td>
+      <td>The unique identifier of the document</td>
+      <td>Required</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Response:</strong></p>
+
+<pre><code class="language-bash">{
+   "classification":{
+      "pages_done":25,
+      "pages_failed":0
+   },
+   "entity_extraction":{
+      "pages_done":25,
+      "pages_failed":0
+   },
+   "ocr":{
+      "pages_done":25,
+      "pages_failed":0
+   },
+   "vectorization":{
+      "pages_done":25,
+      "pages_failed":0
+   }
+}
+</code></pre>
+
+<hr />
+
+<h3 id="get-page-text-and-words">Get page text and words</h3>
+
+<p>Retrieves information about words and text in a single page of the document.</p>
+
+<pre><code class="language-bash">python3 documents/documents/get_page_text_and_words.py --document_id 66f9ccbb927ce8c0ebda4261 --page_number 1
+</code></pre>
+
+<p><strong>Parameters:</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Parameter</strong></th>
+      <th><strong>Description</strong></th>
+      <th><strong>Required/Optional</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>document_id</td>
+      <td>The unique identifier of the document</td>
+      <td>Required</td>
+    </tr>
+    <tr>
+      <td>page_number</td>
+      <td>The page number for which the information is required</td>
+      <td>Required</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Response:</strong></p>
+
+<pre><code class="language-bash">{
+   "page_number":1,
+   "media_type":"NONE",
+   "page_text":"9/6/23, 9:57 AM\naapl-20230701\nIndicate by check mark whether the Registrant has submitted electronically every Interactive Data File required to be submitted pursuant to Rule 405 of Regulation S-T (§232.405 of this chapter) during the preceding 12 months (or for such shorter period that the Registrant was required to submit such files).\nYes :selected: :unselected: No\nIndicate by check mark whether the Registrant is a large accelerated filer, an accelerated filer, a non-accelerated filer, a smaller reporting company, or an emerging growth company. See the definitions of \"large accelerated filer,\" \"accelerated filer,\" \"smaller reporting company,\" and \"emerging growth company\" in Rule 12b-2 of the Exchange Act.\nLarge accelerated filer :selected:\nAccelerated filer :unselected:\nNon-accelerated filer :unselected:\nSmaller reporting company :unselected:\nEmerging growth company :unselected:\nIf an emerging growth company, indicate by check mark if the Registrant has elected not to use the extended transition period for complying with any new or revised financial accounting standards provided pursuant to Section 13(a) of the Exchange Act. :unselected:\nIndicate by check mark whether the Registrant is a shell company (as defined in Rule 12b-2 of the Exchange Act). :unselected: Yes :selected: No\n15,634,232,000 shares of common stock were issued and outstanding as of July 21, 2023.\nhttps://www.sec.gov/Archives/edgar/data/320193/000032019323000077/aapl-20230701.htm\n2/31",
+   "status":"NONE",
+   "classification":{
+      "page_class":"Company Regulatory Compliance",
+      "page_sections":[
+         "Interactive Data File Submission",
+         "Company Classification",
+         "Emerging Growth Company Status",
+         "Shell Company Status",
+         "Common Stock Issuance"
+      ],
+      "page_no":2
+   },
+   "extracted_entities":[
+      {
+         "entity_group":"default",
+         "entities":[
+            {
+               "polygon":[
+                  
+               ],
+               "key":"Date",
+               "value":"9/6/23, 9:57 AM",
+               "label":"Document Date",
+               "is_sensitive":false
+            },
+            {
+               "polygon":[
+                  
+               ],
+               "key":"Document ID",
+               "value":"aapl-20230701",
+               "label":"Document Identifier",
+               "is_sensitive":false
+            },
+            .
+            .
+            .
+         ]
+      }
+   ],
+   "redacted_summary":"",
+   "words":[
+      {
+         "content":"9/6/23,",
+         "polygon":[
+            {
+               "x":71.0,
+               "y":42.0
+            },
+            .
+            .
+         ],
+         "span":{
+            "offset":0,
+            "length":7
+         },
+         "confidence":0.994
+      },
+      .
+      .
+      .
+   ]
+}
+</code></pre>
+
+<hr />
+
+<h3 id="get-page">Get Page</h3>
+
+<p>Retrieves all the information from a single page of a document</p>
+
+<pre><code class="language-bash">python3 documents/documents/get_page.py --document_id 66f9ccbb927ce8c0ebda4261 --page_number 1
+</code></pre>
+
+<p><strong>Parameters:</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Parameter</strong></th>
+      <th><strong>Description</strong></th>
+      <th><strong>Required/Optional</strong></th>
+      <th><strong>Allowed values</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>document_id</td>
+      <td>The unique identifier of the document</td>
+      <td>Required</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>page_number</td>
+      <td>The page number for which the information is required</td>
+      <td>Required</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>bounding_boxes</td>
+      <td>Get information about bounding boxes polygons</td>
+      <td>Optional</td>
+      <td>false, f, False, true, t, True</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Response:</strong></p>
+
+<pre><code class="language-bash">{
+   "classification":{
+      "page_class":"Company Regulatory Compliance",
+      "page_no":2,
+      "page_sections":[
+         "Interactive Data File Submission",
+         "Company Classification",
+         "Emerging Growth Company Status",
+         "Shell Company Status",
+         "Common Stock Issuance"
+      ]
+   },
+   "download_url":"/doc-proc-service/local_store/google-oauth2|117349365869611297391/66ff1732927ce8c0ebda42bd/1.jpg",
+   "extracted_entities":[
+      {
+         "entities":[
+            {
+               "is_sensitive":false,
+               "key":"Date",
+               "label":"Document Date",
+               "polygon":[
+                  [
+                     [
+                        {
+                           "x":71.0,
+                           "y":42.0
+                        },
+                        {
+                           "x":135.0,
+                           "y":43.0
+                        },
+                        {
+                           "x":136.0,
+                           "y":66.0
+                        },
+                        {
+                           "x":71.0,
+                           "y":66.0
+                        }
+                     ]
+                  ],
+                  [
+                     [
+                        {
+                           "x":140.0,
+                           "y":43.0
+                        },
+                        {
+                           "x":180.0,
+                           "y":43.0
+                        },
+                        {
+                           "x":180.0,
+                           "y":66.0
+                        },
+                        {
+                           "x":140.0,
+                           "y":66.0
+                        }
+                     ]
+                  ],
+                  [
+                     [
+                        {
+                           "x":185.0,
+                           "y":43.0
+                        },
+                        {
+                           "x":212.0,
+                           "y":42.0
+                        },
+                        {
+                           "x":212.0,
+                           "y":66.0
+                        },
+                        {
+                           "x":185.0,
+                           "y":66.0
+                        }
+                     ]
+                  ]
+               ],
+               "value":"9/6/23, 9:57 AM"
+            },
+            .
+            .
+            .
+         ],
+         "entity_group":"default"
+      }
+   ],
+   "media_type":"image/jpeg",
+   "page_hierarchy":"None",
+   "page_number":1,
+   "page_text":"Indicate by check mark whether the Registrant has submitted electronically every Interactive Data File required to be ....",
+   "redacted_summary":"The document, identified as 'aapl-20230701', was ... ",
+   "sensitive_words":[
+      
+   ],
+   "status":"VECTORIZATION_DONE",
+   "step_status":{
+      "OCR":{
+         "error":"",
+         "modified_at":datetime.datetime(2024, 10, 3, 22, 14, 48, tzinfo=TzInfo(UTC)),
+         "response":{
+            
+         },
+         "status":"DONE"
+      },
+      "classification":{
+         "error":"",
+         "modified_at":datetime.datetime(2024, 10, 3, 22, 15, 33, tzinfo=TzInfo(UTC)),
+         "response":{
+            
+         },
+         "status":"DONE"
+      },
+      "entity_extraction":{
+         "error":"",
+         "modified_at":datetime.datetime(2024, 10, 3, 22, 16, 47, tzinfo=TzInfo(UTC)),
+         "response":{
+            
+         },
+         "status":"DONE"
+      },
+      "vectorization":{
+         "error":"",
+         "modified_at":datetime.datetime(2024, 10, 3, 22, 17, 42, tzinfo=TzInfo(UTC)),
+         "response":{
+            
+         },
+         "status":"DONE"
+      }
+   },
+   "summary":"The document, identified as 'aapl-20230701', was submitted on..."
+}
+</code></pre>
+
+<hr />
+
+<h3 id="trigger-document-summary">Trigger document summary</h3>
+
+<p>Requests the copilot to generate a summary for a document. The response changes based on the state of the summarization workflow. Once the summarization is completed, the script returns the summary.</p>
+
+<pre><code class="language-bash">python3 documents/documents/trigger_document_summary.py --document_id 66ff1732927ce8c0ebda42bd
+</code></pre>
+
+<p><strong>Parameters:</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Parameter</strong></th>
+      <th><strong>Description</strong></th>
+      <th><strong>Required/Optional</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>document_id</td>
+      <td>The unique identifier of the document</td>
+      <td>Required</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Response:</strong></p>
+
+<pre><code class="language-bash">{
+   "summary_status":"PROCESSING",
+   "summary":"",
+   "redacted_summary":""
+}
+</code></pre>
+
+<aside>
+💡
+
+If this script is run again after summarization is completed, you should receive a different response as shown below
+
+</aside>
+
+<pre><code class="language-bash">{
+   "summary_status":"READY",
+   "summary":"Apple Inc.'s Q3 2023 ...",
+   "redacted_summary":"Apple Inc.'s Q3 2023 ..."
+}
+</code></pre>
+
+<hr />
+
+<h3 id="get-document-summary-status">Get document summary status</h3>
+
+<p>Once the <a href="https://www.notion.so/How-to-use-the-Developer-Scripts-10c5084286c5801bb388fbcc98dc5626?pvs=21">document summary</a> has been triggered, this script helps check the status of summarization for the document.</p>
+
+<pre><code class="language-bash">python3 documents/documents/get_document_summary_status.py --document_id 66fe1b65b1d0dfb13c9975f042.0
+</code></pre>
+
+<p><strong>Parameters:</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Parameter</strong></th>
+      <th><strong>Description</strong></th>
+      <th><strong>Required/Optional</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>document_id</td>
+      <td>The unique identifier of the document</td>
+      <td>Required</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Response:</strong></p>
+
+<p>If the script returns the following:</p>
+
+<pre><code class="language-bash">{'message': 'Summarization not triggered'}
+</code></pre>
+
+<p>Follow <a href="https://www.notion.so/How-to-use-the-Developer-Scripts-10c5084286c5801bb388fbcc98dc5626?pvs=21">document summary</a> script to trigger summarization.</p>
+
+<p>Once the summarization is triggered,</p>
+
+<p>The same script should return:</p>
+
+<pre><code class="language-bash">{'redacted_summary': '', 'summary': '', 'summary_status': 'PROCESSING'}
+</code></pre>
+
+<p>Once processing is completed, the script should return</p>
+
+<pre><code class="language-bash">{
+   "summary_status":"READY",
+   "summary":"Apple Inc.'s Q3 2023 ...",
+   "redacted_summary":"Apple Inc.'s Q3 2023 ..."
+}
+</code></pre>
+
+        </div>
+    </div>
+    <div id="libdoc-toc-container" class="m-fw-mini c-position m-top-right m-anchor-top-left u-bc-primary-edge u-z-10" u-fixed="sm" u-none="sm"></div>
+</main>
+        </div>
+        <footer class="u-p-lg u-fs-sm u-c-primary-alt u-mt-md">
+            <nav class="c-grid m-space-between m-bottom">
+                <ul class="u-ls-none u-mb-md--sm">
+                    <li>
+                        <a href="http://localhost:4000" class="c-btn m-translucid u-pl-none">weav.ai developer documentation</a><br>
+                        weav.ai provides a number of useful and abstracted REST API’s to interact with the platform that make it easy and convenient to build your own workflows and functionality. 
+                    </li>
+                    
+                </ul>
+                
+            </nav>
+        </footer>
+        <script type="text/javascript" src="/assets/libdoc/js/prism/prism-core.min.js"></script>
+        
+            <script type="text/javascript" src="http://localhost:4000/assets/libdoc/js/prism/prism-markup.min.js"></script>
+        
+            <script type="text/javascript" src="http://localhost:4000/assets/libdoc/js/prism/prism-css.min.js"></script>
+        
+            <script type="text/javascript" src="http://localhost:4000/assets/libdoc/js/prism/prism-clike.min.js"></script>
+        
+            <script type="text/javascript" src="http://localhost:4000/assets/libdoc/js/prism/prism-javascript.min.js"></script>
+        
+            <script type="text/javascript" src="http://localhost:4000/assets/libdoc/js/prism/prism-markdown.min.js"></script>
+        
+            <script type="text/javascript" src="http://localhost:4000/assets/libdoc/js/prism/prism-scss.min.js"></script>
+        
+            <script type="text/javascript" src="http://localhost:4000/assets/libdoc/js/prism/prism-yaml.min.js"></script>
+        
+        <script type="text/javascript" src="/assets/libdoc/js/my-toggles.js"></script>
+        <script type="text/javascript" src="/assets/libdoc/js/template.js"></script>
+        <script type="text/javascript" src="/assets/libdoc/js/playground.js"></script>
+
+        <aside my-toggle-name="libdoc-modal" class="c-position m-fixed m-top-left u-w-100 u-h-100 u-z-100">
+            <div class="c-grid m-center m-middle m-position m-fixed m-top-left u-w-100 u-h-100">
+                <div class="c-position m-fixed m-top-left u-w-100 u-h-100 u-cur-pointer u-bc-primary-alt u-faded" my-toggle="libdoc-modal"></div>
+                <div class="u-bc-primary-max u-brad-md u-relative u-b-thin-dashed-alt u-mh-100vh u-o-auto">
+                    <header class="c-grid m-nowrap m-middle u-bb-thin-dashed-alt">
+                        <h4 id="libdoc-modal-title" class="m-grow u-pl-sm">Playground settings</h4>
+                        <nav>
+                            <button class="c-btn u-p-sm u-bl-thin-dashed-alt" my-toggle="libdoc-modal">Close <span class="i-x u-ml-xs"></span></button>
+                        </nav>
+                    </header>
+                    <div id="libdoc-modal-content" class="u-p-lg" u-pl-md="sm" u-pr-md="sm">content</div>
+                </div>
+            </div>
+        </aside>
+    </body>
+</html>

@@ -1,0 +1,2143 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" itemscope itemtype="https://schema.org/WebPage" prefix="og:http://ogp.me/ns#">
+    <head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+        <meta http-equiv="Pragma" content="no-cache">
+        <meta http-equiv="Expires" content="0">
+    
+
+    <!-- LibDoc metadata -->
+    <title>Document Management</title>
+    <meta name="description" content="This tutorial walks through key features of the Weav.ai platform, focusing on how to upload, manage, and process documents efficiently. By following this step-by-step guide, users will gain a deeper understanding of performing actions such as uploading files, retrieving their statuses, summarizing content, creating folders, and executing semantic searches.">
+    <meta itemprop="name" content="Document Management">
+    <meta name="description" itemprop="description" content="This tutorial walks through key features of the Weav.ai platform, focusing on how to upload, manage, and process documents efficiently. By following this step-by-step guide, users will gain a deeper understanding of performing actions such as uploading files, retrieving their statuses, summarizing content, creating folders, and executing semantic searches.">
+    <meta name="application-name" content="Document Management">
+    
+
+    <!-- Favicons -->
+    
+    
+    
+        
+        
+        
+        
+        
+        
+        
+            
+                <link rel="icon" type="image/png" href="http://localhost:4000/assets/libdoc/img/weav/favicon-32x32.png">
+            
+        
+    
+    
+    <meta name="msapplication-TileColor" content="#123456">
+    <meta name="theme-color" content="#123456">
+
+    <!-- Microsoft -->
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="msapplication-starturl" content="http://localhost:4000/docs/platform/tutorials/one.html">
+    <meta name="msapplication-tooltip" content="Document Management">
+    <meta name="msapplication-TileColor" content="#123456">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://localhost:4000/docs/platform/tutorials/one.html">
+    <meta property="og:title" content="Document Management">
+    <meta property="og:description" content="This tutorial walks through key features of the Weav.ai platform, focusing on how to upload, manage, and process documents efficiently. By following this step-by-step guide, users will gain a deeper understanding of performing actions such as uploading files, retrieving their statuses, summarizing content, creating folders, and executing semantic searches.">
+    
+        
+            <meta property="og:image" content="http://localhost:4000/assets/libdoc/img/libdoc.png">
+        
+    
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Document Management">
+    <meta name="twitter:description" content="This tutorial walks through key features of the Weav.ai platform, focusing on how to upload, manage, and process documents efficiently. By following this step-by-step guide, users will gain a deeper understanding of performing actions such as uploading files, retrieving their statuses, summarizing content, creating folders, and executing semantic searches.">
+    <meta name="twitter:url" content="http://localhost:4000/docs/platform/tutorials/one.html">
+    
+        
+            <meta name="twitter:image" content="http://localhost:4000/assets/libdoc/img/libdoc.png">
+        
+    
+
+    <!-- iOS -->
+    <meta name="apple-mobile-web-app-title" content="Document Management">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#123456">
+
+    <!-- Android -->
+    <meta name="theme-color" content="#123456">
+    <meta name="color-scheme" content="light">
+    <meta name="mobile-web-app-capable" content="yes">
+    
+    <!-- Style sheets -->
+    <link rel="stylesheet" href="/assets/libdoc/css/normalize.css">
+    <link rel="stylesheet" href="/assets/libdoc/fonts/icomoon/style.css">
+    <link rel="stylesheet" href="/assets/libdoc/css/libdoc.css">
+
+    <!-- Prism syntax highlighter -->
+    
+        <link rel="stylesheet" href="http://localhost:4000/assets/libdoc/css/prism/prism-weav.css">
+    
+    
+        <style>
+            code[class*="language-"], pre[class*="language-"] {
+                font-size: 0.9em;
+                line-height: 1.4em;
+                font-family: var(--sg-font-family-monospace);
+            }
+        </style>
+    
+
+    <!-- Head scripts -->
+    <script type="text/javascript" src="/assets/libdoc/js/jquery-3.5.1.slim.min.js"></script>
+
+    <!-- LibDoc config -->
+    <script>
+        window.site = {
+            title: 'weav.ai developer documentation',
+            description: 'weav.ai provides a number of useful and abstracted REST API’s to interact with the platform that make it easy and convenient to build your own workflows and functionality.',
+            url: 'http://localhost:4000',
+            baseurl: '',
+            playground: {
+                min_height: '300px',
+                stylesheets: [
+                    
+                ],
+                scripts_head: [
+                    
+                ],
+                scripts_body: [
+                    
+                ]
+            }
+        }
+    </script>
+</head>
+
+    <body class="u-bc-primary-edge">
+        <div class="c-grid m-nowrap">
+            
+<div    class="c-position m-fixed m-top-left u-bc-primary-edge u-w-100 u-h-100 u-translucid u-z-100 m-anchor-top-right" 
+        u-none="xl"
+        id="libdoc-sidebar-overlay"
+        onclick="sidebar();"></div>
+<nav    class="c-position m-top-left u-z-100 u-h-100vh u-bc-primary-max u-bb-thin-dashed-alt m-anchor-top-right--sm m-anchor-top-right--md" 
+        m-fw-medium="md,xl"
+        u-fixed="sm,md" 
+        u-sticky="xl"
+        id="libdoc-sidebar">
+    <div class="c-position m-absolute m-top-0 m-right-0 u-h-100 u-bl-thin-dashed-alt" style="width:1px;"></div>
+    <button class="c-btn c-position m-absolute m-top-right m-anchor-top-left u-z-12 u-p-sm" 
+            u-none="xl" 
+            onclick="sidebar()">
+        <span class="i-menu u-fs-md"></span>
+    </button>
+    <ul id="libdoc-sidebar-menu" class="u-m-none u-p-none u-ls-none u-mh-100vh u-o-auto u-pb-xxl">
+        <li>
+            <a rel="author" href="http://localhost:4000" class="c-btn m-translucid m-block-right u-p-md">
+                
+                    <img    src="http://localhost:4000/assets/libdoc/img/weav/android-chrome-512x512.png" 
+                            
+                                style="max-height:40px"
+                            
+                            alt="weav.ai developer documentation">
+                
+            </a>
+        </li>
+        
+            
+                <li id="libdoc-sidebar-item-search">
+                    <form class="c-form" action="/assets/libdoc/search.html" method="get">
+                        <input  type="search" 
+                                id="libdoc-search-box" 
+                                name="query" 
+                                class="u-bl-none u-bt-thin-dashed-alt u-br-none u-bb-none u-bg-search"
+                                u-fs-xs="sm,md"
+                                u-p-xs="sm,md">
+                        <label for="libdoc-search-box" u-fs-xs="sm">Search</label>
+                        <input type="submit" value="Search" class="u-none">
+                    </form>
+                </li>
+            
+            <!-- 
+
+
+
+
+    
+    
+        <li class="c-grid m-right u-bt-thin-dashed-alt ">
+            <div class="u-p-xxs u-pr-sm u-pl-sm u-fs-xs u-bc-primary-edge u-lh-base u-bl-thin-dashed-alt u-bb-thin-dashed-alt c-text m-ff-monospace m-nowrap u-c-primary-alt" u-fs-xxs="sm">
+                Platform tutorials
+            </div>
+        </li>
+        
+    
+    
+    
+        <li class="u-relative u-o-hidden libdoc-sidebar-item libdoc-sidebar-current-item">
+            
+            <a  href="/docs/platform/tutorials/one.html"
+                class="c-btn m-translucid m-block-right u-br-large-solid u-ta-right  "
+                u-fs-xs="sm,md"
+                u-p-xs="sm,md"
+                data-iframe-mode=""
+                data-category="Platform tutorials">
+                
+                    Documents and Folders
+                
+            </a>
+        </li>
+        
+    
+
+    
+    
+        <li class="c-grid m-right u-bt-thin-dashed-alt u-mt-xs">
+            <div class="u-p-xxs u-pr-sm u-pl-sm u-fs-xs u-bc-primary-edge u-lh-base u-bl-thin-dashed-alt u-bb-thin-dashed-alt c-text m-ff-monospace m-nowrap u-c-primary-alt" u-fs-xxs="sm">
+                Scripts
+            </div>
+        </li>
+        
+    
+    
+    
+        <li class="u-relative u-o-hidden libdoc-sidebar-item ">
+            
+            <a  href="/docs/platform/scripts/setup.html"
+                class="c-btn m-translucid m-block-right m-ff-lead u-ta-right  "
+                u-fs-xs="sm,md"
+                u-p-xs="sm,md"
+                data-iframe-mode=""
+                data-category="Scripts">
+                
+                    Setup
+                
+            </a>
+        </li>
+        
+    
+
+    
+    
+    
+    
+        <li class="u-relative u-o-hidden libdoc-sidebar-item ">
+            
+            <a  href="/docs/platform/scripts/documents.html"
+                class="c-btn m-translucid m-block-right m-ff-lead u-ta-right  "
+                u-fs-xs="sm,md"
+                u-p-xs="sm,md"
+                data-iframe-mode=""
+                data-category="Scripts">
+                
+                    Documents
+                
+            </a>
+        </li>
+        
+    
+
+    
+    
+    
+    
+        <li class="u-relative u-o-hidden libdoc-sidebar-item ">
+            
+            <a  href="/docs/platform/scripts/folders.html"
+                class="c-btn m-translucid m-block-right m-ff-lead u-ta-right  "
+                u-fs-xs="sm,md"
+                u-p-xs="sm,md"
+                data-iframe-mode=""
+                data-category="Scripts">
+                
+                    Folders
+                
+            </a>
+        </li>
+        
+    
+
+    
+    
+    
+    
+        <li class="u-relative u-o-hidden libdoc-sidebar-item ">
+            
+            <a  href="/docs/platform/scripts/forms.html"
+                class="c-btn m-translucid m-block-right m-ff-lead u-ta-right  "
+                u-fs-xs="sm,md"
+                u-p-xs="sm,md"
+                data-iframe-mode=""
+                data-category="Scripts">
+                
+                    Forms
+                
+            </a>
+        </li>
+        
+    
+
+    
+    
+    
+    
+        <li class="u-relative u-o-hidden libdoc-sidebar-item ">
+            
+            <a  href="/docs/platform/scripts/agents.html"
+                class="c-btn m-translucid m-block-right m-ff-lead u-ta-right  "
+                u-fs-xs="sm,md"
+                u-p-xs="sm,md"
+                data-iframe-mode=""
+                data-category="Scripts">
+                
+                    Agents
+                
+            </a>
+        </li>
+        
+    
+
+    
+    
+    
+    
+        <li class="u-relative u-o-hidden libdoc-sidebar-item ">
+            
+            <a  href="/docs/platform/scripts/workflows.html"
+                class="c-btn m-translucid m-block-right m-ff-lead u-ta-right  "
+                u-fs-xs="sm,md"
+                u-p-xs="sm,md"
+                data-iframe-mode=""
+                data-category="Scripts">
+                
+                    Workflows
+                
+            </a>
+        </li>
+        
+    
+
+    
+    
+        <li class="c-grid m-right u-bt-thin-dashed-alt u-mt-xs">
+            <div class="u-p-xxs u-pr-sm u-pl-sm u-fs-xs u-bc-primary-edge u-lh-base u-bl-thin-dashed-alt u-bb-thin-dashed-alt c-text m-ff-monospace m-nowrap u-c-primary-alt" u-fs-xxs="sm">
+                Developer library
+            </div>
+        </li>
+        
+    
+    
+    
+        <li class="u-relative u-o-hidden libdoc-sidebar-item ">
+            
+            <a  href="/docs/developer_library/setup.html"
+                class="c-btn m-translucid m-block-right m-ff-lead u-ta-right  "
+                u-fs-xs="sm,md"
+                u-p-xs="sm,md"
+                data-iframe-mode=""
+                data-category="Developer library">
+                
+                    Installation guide
+                
+            </a>
+        </li>
+        
+    
+
+    
+    
+    
+    
+        <li class="u-relative u-o-hidden libdoc-sidebar-item ">
+            
+            <a  href="/docs/developer_library/workflow_operations.html"
+                class="c-btn m-translucid m-block-right m-ff-lead u-ta-right  "
+                u-fs-xs="sm,md"
+                u-p-xs="sm,md"
+                data-iframe-mode=""
+                data-category="Developer library">
+                
+                    WorkflowOperations
+                
+            </a>
+        </li>
+        
+    
+
+    
+    
+    
+    
+        <li class="u-relative u-o-hidden libdoc-sidebar-item ">
+            
+            <a  href="/docs/developer_library/folder_operations.html"
+                class="c-btn m-translucid m-block-right m-ff-lead u-ta-right  "
+                u-fs-xs="sm,md"
+                u-p-xs="sm,md"
+                data-iframe-mode=""
+                data-category="Developer library">
+                
+                    FolderOperations
+                
+            </a>
+        </li>
+        
+    
+
+    
+    
+    
+    
+        <li class="u-relative u-o-hidden libdoc-sidebar-item ">
+            
+            <a  href="/docs/developer_library/form_operations.html"
+                class="c-btn m-translucid m-block-right m-ff-lead u-ta-right  "
+                u-fs-xs="sm,md"
+                u-p-xs="sm,md"
+                data-iframe-mode=""
+                data-category="Developer library">
+                
+                    FormOperations
+                
+            </a>
+        </li>
+        
+    
+
+    
+    
+    
+    
+        <li class="u-relative u-o-hidden libdoc-sidebar-item ">
+            
+            <a  href="/docs/developer_library/document_operations.html"
+                class="c-btn m-translucid m-block-right m-ff-lead u-ta-right  "
+                u-fs-xs="sm,md"
+                u-p-xs="sm,md"
+                data-iframe-mode=""
+                data-category="Developer library">
+                
+                    DocumentOperations
+                
+            </a>
+        </li>
+        
+    
+
+    
+    
+    
+    
+        <li class="u-relative u-o-hidden libdoc-sidebar-item ">
+            
+            <a  href="/docs/developer_library/chat_operations.html"
+                class="c-btn m-translucid m-block-right m-ff-lead u-ta-right  "
+                u-fs-xs="sm,md"
+                u-p-xs="sm,md"
+                data-iframe-mode=""
+                data-category="Developer library">
+                
+                    ChatOperations
+                
+            </a>
+        </li>
+        
+    
+
+    
+    
+    
+    
+        <li class="u-relative u-o-hidden libdoc-sidebar-item ">
+            
+            <a  href="/docs/developer_library/agent_operations.html"
+                class="c-btn m-translucid m-block-right m-ff-lead u-ta-right  "
+                u-fs-xs="sm,md"
+                u-p-xs="sm,md"
+                data-iframe-mode=""
+                data-category="Developer library">
+                
+                    AgentOperations
+                
+            </a>
+        </li>
+        
+    
+
+    
+    
+    
+    
+        <li class="u-relative u-o-hidden libdoc-sidebar-item ">
+            
+            <a  href="/docs/developer_library/action_operations.html"
+                class="c-btn m-translucid m-block-right m-ff-lead u-ta-right  "
+                u-fs-xs="sm,md"
+                u-p-xs="sm,md"
+                data-iframe-mode=""
+                data-category="Developer library">
+                
+                    ActionOperations
+                
+            </a>
+        </li>
+        
+    
+ -->
+
+<!-- 
+
+
+
+
+    
+    
+        
+        <li class="c-grid m-right u-bt-thin-dashed-alt ">
+            <a href="" 
+               class="u-p-xxs u-pr-sm u-pl-sm u-fs-xs u-bc-primary-edge u-lh-base u-bl-thin-dashed-alt u-bb-thin-dashed-alt c-text m-ff-monospace m-nowrap u-c-primary-alt hover:u-bc-primary-fade w-full block cursor-pointer" 
+               u-fs-xxs="sm"
+               style="cursor: pointer; text-decoration: none;">
+                Platform tutorials
+            </a>
+        </li>
+        
+    
+    
+    
+        <li class="u-relative u-o-hidden libdoc-sidebar-item libdoc-sidebar-current-item">
+            
+            <a  href="/docs/platform/tutorials/one.html"
+                class="c-btn m-translucid m-block-right u-br-large-solid u-ta-right  "
+                u-fs-xs="sm,md"
+                u-p-xs="sm,md"
+                data-iframe-mode=""
+                data-category="Platform tutorials">
+                
+                    Documents and Folders
+                
+            </a>
+        </li>
+        
+    
+
+    
+    
+        
+        <li class="c-grid m-right u-bt-thin-dashed-alt u-mt-xs">
+            <a href="" 
+               class="u-p-xxs u-pr-sm u-pl-sm u-fs-xs u-bc-primary-edge u-lh-base u-bl-thin-dashed-alt u-bb-thin-dashed-alt c-text m-ff-monospace m-nowrap u-c-primary-alt hover:u-bc-primary-fade w-full block cursor-pointer" 
+               u-fs-xxs="sm"
+               style="cursor: pointer; text-decoration: none;">
+                Scripts
+            </a>
+        </li>
+        
+    
+    
+    
+        <li class="u-relative u-o-hidden libdoc-sidebar-item ">
+            
+            <a  href="/docs/platform/scripts/setup.html"
+                class="c-btn m-translucid m-block-right m-ff-lead u-ta-right  "
+                u-fs-xs="sm,md"
+                u-p-xs="sm,md"
+                data-iframe-mode=""
+                data-category="Scripts">
+                
+                    Setup
+                
+            </a>
+        </li>
+        
+    
+
+    
+    
+    
+    
+        <li class="u-relative u-o-hidden libdoc-sidebar-item ">
+            
+            <a  href="/docs/platform/scripts/documents.html"
+                class="c-btn m-translucid m-block-right m-ff-lead u-ta-right  "
+                u-fs-xs="sm,md"
+                u-p-xs="sm,md"
+                data-iframe-mode=""
+                data-category="Scripts">
+                
+                    Documents
+                
+            </a>
+        </li>
+        
+    
+
+    
+    
+    
+    
+        <li class="u-relative u-o-hidden libdoc-sidebar-item ">
+            
+            <a  href="/docs/platform/scripts/folders.html"
+                class="c-btn m-translucid m-block-right m-ff-lead u-ta-right  "
+                u-fs-xs="sm,md"
+                u-p-xs="sm,md"
+                data-iframe-mode=""
+                data-category="Scripts">
+                
+                    Folders
+                
+            </a>
+        </li>
+        
+    
+
+    
+    
+    
+    
+        <li class="u-relative u-o-hidden libdoc-sidebar-item ">
+            
+            <a  href="/docs/platform/scripts/forms.html"
+                class="c-btn m-translucid m-block-right m-ff-lead u-ta-right  "
+                u-fs-xs="sm,md"
+                u-p-xs="sm,md"
+                data-iframe-mode=""
+                data-category="Scripts">
+                
+                    Forms
+                
+            </a>
+        </li>
+        
+    
+
+    
+    
+    
+    
+        <li class="u-relative u-o-hidden libdoc-sidebar-item ">
+            
+            <a  href="/docs/platform/scripts/agents.html"
+                class="c-btn m-translucid m-block-right m-ff-lead u-ta-right  "
+                u-fs-xs="sm,md"
+                u-p-xs="sm,md"
+                data-iframe-mode=""
+                data-category="Scripts">
+                
+                    Agents
+                
+            </a>
+        </li>
+        
+    
+
+    
+    
+    
+    
+        <li class="u-relative u-o-hidden libdoc-sidebar-item ">
+            
+            <a  href="/docs/platform/scripts/workflows.html"
+                class="c-btn m-translucid m-block-right m-ff-lead u-ta-right  "
+                u-fs-xs="sm,md"
+                u-p-xs="sm,md"
+                data-iframe-mode=""
+                data-category="Scripts">
+                
+                    Workflows
+                
+            </a>
+        </li>
+        
+    
+
+    
+    
+        
+        <li class="c-grid m-right u-bt-thin-dashed-alt u-mt-xs">
+            <a href="" 
+               class="u-p-xxs u-pr-sm u-pl-sm u-fs-xs u-bc-primary-edge u-lh-base u-bl-thin-dashed-alt u-bb-thin-dashed-alt c-text m-ff-monospace m-nowrap u-c-primary-alt hover:u-bc-primary-fade w-full block cursor-pointer" 
+               u-fs-xxs="sm"
+               style="cursor: pointer; text-decoration: none;">
+                Developer library
+            </a>
+        </li>
+        
+    
+    
+    
+        <li class="u-relative u-o-hidden libdoc-sidebar-item ">
+            
+            <a  href="/docs/developer_library/setup.html"
+                class="c-btn m-translucid m-block-right m-ff-lead u-ta-right  "
+                u-fs-xs="sm,md"
+                u-p-xs="sm,md"
+                data-iframe-mode=""
+                data-category="Developer library">
+                
+                    Installation guide
+                
+            </a>
+        </li>
+        
+    
+
+    
+    
+    
+    
+        <li class="u-relative u-o-hidden libdoc-sidebar-item ">
+            
+            <a  href="/docs/developer_library/workflow_operations.html"
+                class="c-btn m-translucid m-block-right m-ff-lead u-ta-right  "
+                u-fs-xs="sm,md"
+                u-p-xs="sm,md"
+                data-iframe-mode=""
+                data-category="Developer library">
+                
+                    WorkflowOperations
+                
+            </a>
+        </li>
+        
+    
+
+    
+    
+    
+    
+        <li class="u-relative u-o-hidden libdoc-sidebar-item ">
+            
+            <a  href="/docs/developer_library/folder_operations.html"
+                class="c-btn m-translucid m-block-right m-ff-lead u-ta-right  "
+                u-fs-xs="sm,md"
+                u-p-xs="sm,md"
+                data-iframe-mode=""
+                data-category="Developer library">
+                
+                    FolderOperations
+                
+            </a>
+        </li>
+        
+    
+
+    
+    
+    
+    
+        <li class="u-relative u-o-hidden libdoc-sidebar-item ">
+            
+            <a  href="/docs/developer_library/form_operations.html"
+                class="c-btn m-translucid m-block-right m-ff-lead u-ta-right  "
+                u-fs-xs="sm,md"
+                u-p-xs="sm,md"
+                data-iframe-mode=""
+                data-category="Developer library">
+                
+                    FormOperations
+                
+            </a>
+        </li>
+        
+    
+
+    
+    
+    
+    
+        <li class="u-relative u-o-hidden libdoc-sidebar-item ">
+            
+            <a  href="/docs/developer_library/document_operations.html"
+                class="c-btn m-translucid m-block-right m-ff-lead u-ta-right  "
+                u-fs-xs="sm,md"
+                u-p-xs="sm,md"
+                data-iframe-mode=""
+                data-category="Developer library">
+                
+                    DocumentOperations
+                
+            </a>
+        </li>
+        
+    
+
+    
+    
+    
+    
+        <li class="u-relative u-o-hidden libdoc-sidebar-item ">
+            
+            <a  href="/docs/developer_library/chat_operations.html"
+                class="c-btn m-translucid m-block-right m-ff-lead u-ta-right  "
+                u-fs-xs="sm,md"
+                u-p-xs="sm,md"
+                data-iframe-mode=""
+                data-category="Developer library">
+                
+                    ChatOperations
+                
+            </a>
+        </li>
+        
+    
+
+    
+    
+    
+    
+        <li class="u-relative u-o-hidden libdoc-sidebar-item ">
+            
+            <a  href="/docs/developer_library/agent_operations.html"
+                class="c-btn m-translucid m-block-right m-ff-lead u-ta-right  "
+                u-fs-xs="sm,md"
+                u-p-xs="sm,md"
+                data-iframe-mode=""
+                data-category="Developer library">
+                
+                    AgentOperations
+                
+            </a>
+        </li>
+        
+    
+
+    
+    
+    
+    
+        <li class="u-relative u-o-hidden libdoc-sidebar-item ">
+            
+            <a  href="/docs/developer_library/action_operations.html"
+                class="c-btn m-translucid m-block-right m-ff-lead u-ta-right  "
+                u-fs-xs="sm,md"
+                u-p-xs="sm,md"
+                data-iframe-mode=""
+                data-category="Developer library">
+                
+                    ActionOperations
+                
+            </a>
+        </li>
+        
+    
+ -->
+
+
+
+
+
+
+
+<!-- Debug current mappings -->
+<!-- <script>
+const categoryMappings = {
+    "Scripts": "/docs/platform/intro.html",
+    "Platform tutorials": "/docs/platform/tutorials/intro.html",
+    "Developer library": "/docs/developer_library/intro.html"
+};
+console.log('Available category mappings:', categoryMappings);
+</script> -->
+
+
+    
+    
+        <li class="c-grid m-right u-bt-thin-dashed-alt ">
+            <a href="javascript:void(0)" 
+               class="u-p-xxs u-pr-sm u-pl-sm u-fs-xs u-bc-primary-edge u-lh-base u-bl-thin-dashed-alt u-bb-thin-dashed-alt c-text m-ff-monospace m-nowrap u-c-primary-alt hover:u-bc-primary-fade w-full block cursor-pointer" 
+               u-fs-xxs="sm"
+               style="cursor: pointer; text-decoration: none;"
+               data-category="Platform tutorials"
+               data-url="/docs/platform/tutorials/intro.html"
+               onclick="handleCategoryClick(this)">
+                Platform tutorials
+            </a>
+        </li>
+        
+    
+    
+    
+        <li class="u-relative u-o-hidden libdoc-sidebar-item libdoc-sidebar-current-item">
+            
+            <a  href="/docs/platform/tutorials/one.html"
+                class="c-btn m-translucid m-block-right u-br-large-solid u-ta-right  "
+                u-fs-xs="sm,md"
+                u-p-xs="sm,md"
+                data-iframe-mode=""
+                data-category="Platform tutorials">
+                
+                    Documents and Folders
+                
+            </a>
+        </li>
+        
+    
+
+    
+    
+        <li class="c-grid m-right u-bt-thin-dashed-alt u-mt-xs">
+            <a href="javascript:void(0)" 
+               class="u-p-xxs u-pr-sm u-pl-sm u-fs-xs u-bc-primary-edge u-lh-base u-bl-thin-dashed-alt u-bb-thin-dashed-alt c-text m-ff-monospace m-nowrap u-c-primary-alt hover:u-bc-primary-fade w-full block cursor-pointer" 
+               u-fs-xxs="sm"
+               style="cursor: pointer; text-decoration: none;"
+               data-category="Scripts"
+               data-url="/docs/platform/intro.html"
+               onclick="handleCategoryClick(this)">
+                Scripts
+            </a>
+        </li>
+        
+    
+    
+    
+        <li class="u-relative u-o-hidden libdoc-sidebar-item ">
+            
+            <a  href="/docs/platform/scripts/setup.html"
+                class="c-btn m-translucid m-block-right m-ff-lead u-ta-right  "
+                u-fs-xs="sm,md"
+                u-p-xs="sm,md"
+                data-iframe-mode=""
+                data-category="Scripts">
+                
+                    Setup
+                
+            </a>
+        </li>
+        
+    
+
+    
+    
+    
+    
+        <li class="u-relative u-o-hidden libdoc-sidebar-item ">
+            
+            <a  href="/docs/platform/scripts/documents.html"
+                class="c-btn m-translucid m-block-right m-ff-lead u-ta-right  "
+                u-fs-xs="sm,md"
+                u-p-xs="sm,md"
+                data-iframe-mode=""
+                data-category="Scripts">
+                
+                    Documents
+                
+            </a>
+        </li>
+        
+    
+
+    
+    
+    
+    
+        <li class="u-relative u-o-hidden libdoc-sidebar-item ">
+            
+            <a  href="/docs/platform/scripts/folders.html"
+                class="c-btn m-translucid m-block-right m-ff-lead u-ta-right  "
+                u-fs-xs="sm,md"
+                u-p-xs="sm,md"
+                data-iframe-mode=""
+                data-category="Scripts">
+                
+                    Folders
+                
+            </a>
+        </li>
+        
+    
+
+    
+    
+    
+    
+        <li class="u-relative u-o-hidden libdoc-sidebar-item ">
+            
+            <a  href="/docs/platform/scripts/forms.html"
+                class="c-btn m-translucid m-block-right m-ff-lead u-ta-right  "
+                u-fs-xs="sm,md"
+                u-p-xs="sm,md"
+                data-iframe-mode=""
+                data-category="Scripts">
+                
+                    Forms
+                
+            </a>
+        </li>
+        
+    
+
+    
+    
+    
+    
+        <li class="u-relative u-o-hidden libdoc-sidebar-item ">
+            
+            <a  href="/docs/platform/scripts/agents.html"
+                class="c-btn m-translucid m-block-right m-ff-lead u-ta-right  "
+                u-fs-xs="sm,md"
+                u-p-xs="sm,md"
+                data-iframe-mode=""
+                data-category="Scripts">
+                
+                    Agents
+                
+            </a>
+        </li>
+        
+    
+
+    
+    
+    
+    
+        <li class="u-relative u-o-hidden libdoc-sidebar-item ">
+            
+            <a  href="/docs/platform/scripts/workflows.html"
+                class="c-btn m-translucid m-block-right m-ff-lead u-ta-right  "
+                u-fs-xs="sm,md"
+                u-p-xs="sm,md"
+                data-iframe-mode=""
+                data-category="Scripts">
+                
+                    Workflows
+                
+            </a>
+        </li>
+        
+    
+
+    
+    
+        <li class="c-grid m-right u-bt-thin-dashed-alt u-mt-xs">
+            <a href="javascript:void(0)" 
+               class="u-p-xxs u-pr-sm u-pl-sm u-fs-xs u-bc-primary-edge u-lh-base u-bl-thin-dashed-alt u-bb-thin-dashed-alt c-text m-ff-monospace m-nowrap u-c-primary-alt hover:u-bc-primary-fade w-full block cursor-pointer" 
+               u-fs-xxs="sm"
+               style="cursor: pointer; text-decoration: none;"
+               data-category="Developer library"
+               data-url="/docs/developer_library/intro.html"
+               onclick="handleCategoryClick(this)">
+                Developer library
+            </a>
+        </li>
+        
+    
+    
+    
+        <li class="u-relative u-o-hidden libdoc-sidebar-item ">
+            
+            <a  href="/docs/developer_library/setup.html"
+                class="c-btn m-translucid m-block-right m-ff-lead u-ta-right  "
+                u-fs-xs="sm,md"
+                u-p-xs="sm,md"
+                data-iframe-mode=""
+                data-category="Developer library">
+                
+                    Installation guide
+                
+            </a>
+        </li>
+        
+    
+
+    
+    
+    
+    
+        <li class="u-relative u-o-hidden libdoc-sidebar-item ">
+            
+            <a  href="/docs/developer_library/workflow_operations.html"
+                class="c-btn m-translucid m-block-right m-ff-lead u-ta-right  "
+                u-fs-xs="sm,md"
+                u-p-xs="sm,md"
+                data-iframe-mode=""
+                data-category="Developer library">
+                
+                    WorkflowOperations
+                
+            </a>
+        </li>
+        
+    
+
+    
+    
+    
+    
+        <li class="u-relative u-o-hidden libdoc-sidebar-item ">
+            
+            <a  href="/docs/developer_library/folder_operations.html"
+                class="c-btn m-translucid m-block-right m-ff-lead u-ta-right  "
+                u-fs-xs="sm,md"
+                u-p-xs="sm,md"
+                data-iframe-mode=""
+                data-category="Developer library">
+                
+                    FolderOperations
+                
+            </a>
+        </li>
+        
+    
+
+    
+    
+    
+    
+        <li class="u-relative u-o-hidden libdoc-sidebar-item ">
+            
+            <a  href="/docs/developer_library/form_operations.html"
+                class="c-btn m-translucid m-block-right m-ff-lead u-ta-right  "
+                u-fs-xs="sm,md"
+                u-p-xs="sm,md"
+                data-iframe-mode=""
+                data-category="Developer library">
+                
+                    FormOperations
+                
+            </a>
+        </li>
+        
+    
+
+    
+    
+    
+    
+        <li class="u-relative u-o-hidden libdoc-sidebar-item ">
+            
+            <a  href="/docs/developer_library/document_operations.html"
+                class="c-btn m-translucid m-block-right m-ff-lead u-ta-right  "
+                u-fs-xs="sm,md"
+                u-p-xs="sm,md"
+                data-iframe-mode=""
+                data-category="Developer library">
+                
+                    DocumentOperations
+                
+            </a>
+        </li>
+        
+    
+
+    
+    
+    
+    
+        <li class="u-relative u-o-hidden libdoc-sidebar-item ">
+            
+            <a  href="/docs/developer_library/chat_operations.html"
+                class="c-btn m-translucid m-block-right m-ff-lead u-ta-right  "
+                u-fs-xs="sm,md"
+                u-p-xs="sm,md"
+                data-iframe-mode=""
+                data-category="Developer library">
+                
+                    ChatOperations
+                
+            </a>
+        </li>
+        
+    
+
+    
+    
+    
+    
+        <li class="u-relative u-o-hidden libdoc-sidebar-item ">
+            
+            <a  href="/docs/developer_library/agent_operations.html"
+                class="c-btn m-translucid m-block-right m-ff-lead u-ta-right  "
+                u-fs-xs="sm,md"
+                u-p-xs="sm,md"
+                data-iframe-mode=""
+                data-category="Developer library">
+                
+                    AgentOperations
+                
+            </a>
+        </li>
+        
+    
+
+    
+    
+    
+    
+        <li class="u-relative u-o-hidden libdoc-sidebar-item ">
+            
+            <a  href="/docs/developer_library/action_operations.html"
+                class="c-btn m-translucid m-block-right m-ff-lead u-ta-right  "
+                u-fs-xs="sm,md"
+                u-p-xs="sm,md"
+                data-iframe-mode=""
+                data-category="Developer library">
+                
+                    ActionOperations
+                
+            </a>
+        </li>
+        
+    
+
+
+<script>
+function handleCategoryClick(element) {
+    const category = element.getAttribute('data-category');
+    const url = element.getAttribute('data-url');
+    console.log('Clicked category:', category);
+    console.log('URL:', url);
+    
+    if (url) {
+        window.location.href = url;
+    } else {
+        console.log('No URL mapping found for category:', category);
+    }
+}
+</script>
+        
+    </ul>
+</nav>
+
+            <main class="m-grow m-w-1 c-grid m-nowrap m-center">
+    <div class="m-grow m-w-1 u-mw-main u-bc-primary-max u-b-thin-dashed-alt">
+        <header class="u-bb-thin-dashed-alt u-p-lg" u-p-sm="sm">
+            <h1 id="libdoc-page-title" class="u-mt-none u-mb-xs">Document Management</h1>
+            <p class="u-fs-lg u-m-none u-lh-base" u-fs-md="sm">This tutorial walks through key features of the Weav.ai platform, focusing on how to upload, manage, and process documents efficiently. By following this step-by-step guide, users will gain a deeper understanding of performing actions such as uploading files, retrieving their statuses, summarizing content, creating folders, and executing semantic searches.
+                </p>
+        </header>
+        <div id="libdoc-content" class="u-p-lg u-p-sm--sm">
+            <h3 id="key-steps-covered"><strong>Key Steps Covered</strong></h3>
+<ul>
+  <li><strong>Token Generation</strong>: Obtain a temporary token for secure API access.</li>
+  <li><strong>Uploading Documents</strong>: Learn how to upload a document and observe its status updates.</li>
+  <li><strong>Processing Documents</strong>: Retrieve detailed information about uploaded documents, including summaries and page-specific data.</li>
+  <li><strong>Folder Management</strong>: Organize files into folders for better workflow efficiency.</li>
+  <li><strong>Semantic Search</strong>: Explore how to search across documents and folders using semantic capabilities.</li>
+  <li><strong>Summary Creation</strong>: Generate concise summaries of search results for quick insights.</li>
+</ul>
+
+<p>To obtain a temporary token from your web session, please see below:</p>
+
+<p><img src="/assets/libdoc/img/sampleImages/tutorial1/1.png" alt="Untitled" /></p>
+
+<p>To work with this tutorial, we will take a step by step approach by uploading, deleting and searching information from the uploaded document. We will also take a quick glance at creating folders and uploading documents into folders.</p>
+
+<p>Note:
+In the tutorial, the APIs on <a href="http://dev2.copilot.weav.ai"><code>dev2.copilot.weav.ai</code></a> are being used, however, this can be replaced by the environment you are working with.</p>
+
+<p>On the home screen, you can initially observe there are no documents present.</p>
+
+<p><img src="/assets/libdoc/img/sampleImages/tutorial1/2.png" alt="Screenshot 2024-09-09 at 4.25.03 PM.png" /></p>
+
+<h2 id="upload-document">UPLOAD DOCUMENT</h2>
+
+<p>For the purpose of this tutorial, we will be uploading a file named <code>AAPL_10Q.pdf</code></p>
+
+<p><strong>cURL</strong></p>
+
+<pre><code class="language-jsx">curl -X 'POST' 'https://dev2.copilot.weav.ai/file-service/documents/' \
+--header 'Content-Type: multipart/form-data' \
+--header 'Accept: application/json' \
+--header 'Authorization: Bearer &lt;your token&gt;' \
+--form 'file_uploaded=@"AAPL_10Q.pdf"'
+</code></pre>
+
+<p><strong>Response</strong></p>
+
+<pre><code class="language-json">{
+  "_id": "66e0f8993c95029325001a78",
+  "media_type": "application/pdf",
+  "download_url": "/doc-proc-service/local_store/google-oauth2|117349365869611297391/66e0f8993c95029325001a78/66e0f8993c95029325001a78",
+  "pages": [],
+  "status": "NEW",
+  "file_name": "AAPL_10Q.pdf",
+  "created_at": "2024-09-11T01:55:37Z",
+  "size": 654929,
+  "source": "application",
+  "step_status": {
+    "FORM_EXTRACTION": {
+      "status": "NOT_STARTED",
+      "modified_at": "2024-09-11T01:55:37Z"
+    }
+  },
+  "in_folders": [],
+  "tags": [],
+  "ai_tags": [],
+  "user_id": "google-oauth2|117349365869611297391",
+  "tenant_id": ""
+}
+</code></pre>
+
+<p><img src="/assets/libdoc/img/sampleImages/tutorial1/3.jpg" alt="New Document Uploaded.jpg" /></p>
+
+<p>Every time a new document is uploaded, a new ID for that document is generated.</p>
+
+<h3 id="get-document-status">GET DOCUMENT STATUS</h3>
+
+<p>To find out at what stage the documents processing is, we can hit the cURL command below.</p>
+
+<p><strong>cURL</strong></p>
+
+<pre><code class="language-bash">curl -X 'GET' 'https://dev2.copilot.weav.ai/file-service/documents/66e0f8993c95029325001a78/step' \
+--header 'Accept: application/json' \
+--header 'Authorization: Bearer &lt;your token&gt;'
+</code></pre>
+
+<p><strong>Response</strong></p>
+
+<pre><code class="language-json">{
+   "step_status":{
+      "FORM_EXTRACTION":{
+         "status":"NOT_STARTED",
+         "modified_at":"2024-09-09T21:26:29Z"
+      }
+   }
+}
+</code></pre>
+
+<h3 id="get-document">GET DOCUMENT</h3>
+
+<p>To retrieve the uploaded document, we can use the document ID in the cURL command. We can retrieve the document ID from the <code>UPLOAD DOCUMENT</code> API response using the <code>_id</code> field or simply go on the UI, click the document and retrieve it from the URL.</p>
+
+<p><img src="/assets/libdoc/img/sampleImages/tutorial1/4.png" alt="Screenshot 2024-09-10 at 6.56.18 PM.png" /></p>
+
+<p><strong>cURL</strong></p>
+
+<pre><code class="language-json">curl -X 'GET' 'https://dev2.copilot.weav.ai/file-service/documents/66e0f8993c95029325001a78' \
+--header 'Content-Type: application/json' \
+--header 'Accept: application/json' \
+--header 'Authorization: Bearer &lt;your token&gt;' 
+
+</code></pre>
+
+<p><strong>Response</strong></p>
+
+<pre><code class="language-json">{
+   "_id":"66e0f8993c95029325001a78",
+   "media_type":"application/pdf",
+   "download_url":"/doc-proc-service/local_store/google-oauth2|117349365869611297391/66e0f8993c95029325001a78/66df67a3a2adcf1fe2e3b900",
+   "pages":[
+      {
+         "page_number":0,
+         "media_type":"image/jpeg",
+         "download_url":"/doc-proc-service/local_store/google-oauth2|117349365869611297391/66e0f8993c95029325001a78/0.jpg",
+         "page_text":"aapl-20230701\n9/6/23, 9:57 AM\nUNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, D.C. 20549\nFORM 10-Q\n(Mark One) :selected: X QUARTERLY REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934 For the quarterly period ended July 1, 2023 or :unselected:\nTRANSITION REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934 For the transition period from to\nCommission File Number: 001-36743\nApple Inc.\n(Exact name of Registrant as specified in its charter)\nCalifornia (State or other jurisdiction of incorporation or organization)\n94-2404110 (I.R.S. Employer Identification No.)\nOne Apple Park Way\nCupertino, California (Address of principal executive offices) (408) 996-1010 (Registrant's telephone number, including area code)\n95014 (Zip Code)\nSecurities registered pursuant to Section 12(b) of the Act:\nTitle of each class\nTrading symbol(s)\nCommon Stock, $0.00001 par value per share\nAAPL\n1.375% Notes due 2024\n0.000% Notes due 2025\n0.875% Notes due 2025\n1.625% Notes due 2026\n2.000% Notes due 2027\n1.375% Notes due 2029\n3.050% Notes due 2029\n0.500% Notes due 2031\n3.600% Notes due 2042\nName of each exchange on which registered\nThe Nasdaq Stock Market LLC The Nasdaq Stock Market LLC The Nasdaq Stock Market LLC The Nasdaq Stock Market LLC The Nasdaq Stock Market LLC The Nasdaq Stock Market LLC The Nasdaq Stock Market LLC The Nasdaq Stock Market LLC The Nasdaq Stock Market LLC The Nasdaq Stock Market LLC\nIndicate by check mark whether the Registrant (1) has filed all reports required to be filed by Section 13 or 15(d) of the Securities Exchange Act of 1934 during the preceding 12 months (or for such shorter period that the Registrant was required to file such reports), and (2) has been subject to such filing requirements for the past 90 days.\nYes :unselected: :selected: No\nhttps://www.sec.gov/Archives/edgar/data/320193/000032019323000077/aapl-20230701.htm\n1/31 :unselected: :unselected: :unselected: :unselected: :unselected: :unselected: :unselected: :unselected: :unselected: :unselected: :unselected: :unselected: :unselected: :unselected: :unselected: :unselected: :unselected: :unselected: :unselected: :unselected:",
+         "status":"VECTORIZATION_DONE",
+         "step_status":{
+            "classification":{
+               "status":"DONE",
+               "modified_at":"2024-09-09T21:25:12Z"
+            },
+            "entity_extraction":{
+               "status":"DONE",
+               "modified_at":"2024-09-09T21:25:49Z"
+            },
+            "vectorization":{
+               "status":"DONE",
+               "modified_at":"2024-09-09T21:26:12Z"
+            },
+            "OCR":{
+               "status":"DONE",
+               "modified_at":"2024-09-09T21:25:07Z"
+            }
+         },
+         "classification":{
+            "page_class":"UNITED STATES SECURITIES AND EXCHANGE COMMISSION",
+            "page_sections":[
+               "FORM 10-Q",
+               "Apple Inc.",
+               "Securities registered pursuant to Section 12(b) of the Act:",
+               "Indicate by check mark whether the Registrant"
+            ],
+            "page_no":1
+         }
+      },
+      {...},
+      {...},
+      .
+      .
+      .
+      .
+      {...}
+   ],
+   "status":"AI_READY",
+   "file_name":"AAPL_10Q.pdf",
+   "created_at":"2024-09-09T21:24:51Z",
+   "size":654929,
+   "source":"application",
+   "category":"UNITED STATES SECURITIES AND EXCHANGE COMMISSION",
+   "step_status":{
+      "FORM_EXTRACTION":{
+         "status":"NOT_STARTED",
+         "modified_at":"2024-09-09T21:26:29Z"
+      }
+   },
+   "in_folders":[
+      
+   ],
+   "tags":[
+      
+   ],
+   "ai_tags":[
+      
+   ],
+   "user_id":"google-oauth2|117349365869611297391",
+   "tenant_id":""
+}
+</code></pre>
+
+<h3 id="summarize-document">SUMMARIZE DOCUMENT</h3>
+
+<p>To create a summary once the document is uploaded, we can use the cURL below</p>
+
+<p><strong>cURL</strong></p>
+
+<pre><code class="language-json">curl -X 'POST' 'https://dev2.copilot.weav.ai/file-service/documents/66e0f8993c95029325001a78/summary' \
+--header 'Content-Type: application/json' \
+--header 'Accept: application/json' \
+--header 'Authorization: Bearer &lt;your token&gt;' 
+</code></pre>
+
+<p>Note: The summary is only available once the processing of the document is completed. If the document is still processing, you will receive the response shown below:</p>
+
+<p><strong>Response</strong></p>
+
+<pre><code class="language-json">{
+   "summary_status":"PROCESSING",
+   "summary":"",
+   "redacted_summary":""
+}
+</code></pre>
+
+<p>Once, the document processing is completed, hitting the same document would response with the summary, shown below:</p>
+
+<p><strong>Response</strong></p>
+
+<pre><code class="language-json">{
+   "summary_status":"READY",
+   "summary":"Apple Inc.'s Q3 2023 report shows a slight decrease in net sales primarily due to lower sales of iPad and iPhone, offset by higher sales of Services. The company announced new products including the 15-inch MacBook Air, Mac Studio, Mac Pro, and Apple Vision Pro. Apple repurchased 365 million shares for $56.1 billion and paid dividends of $3.8 billion. The company is involved in legal proceedings with Epic Games, with the court ruling in favor of Apple on nine out of ten counts. However, certain provisions of Apple's App Store Review Guidelines were found to violate California's unfair competition law. The company also conducted share repurchase activity from April 2, 2023 to July 1, 2023, purchasing a total of 102,673 shares at an average price of $94,569 per share.",
+   "redacted_summary":"Apple Inc.'s Q3 2023 report shows a slight decrease in net sales primarily due to lower sales of iPad and iPhone, offset by higher sales of Services. The company announced new products including the 15-inch MacBook Air, Mac Studio, Mac Pro, and Apple Vision Pro. Apple repurchased 365 million shares for $56.1 billion and paid dividends of $3.8 billion. The company is involved in legal proceedings with Epic Games, with the court ruling in favor of Apple on nine out of ten counts. However, certain provisions of Apple's App Store Review Guidelines were found to violate California's unfair competition law. The company also conducted share repurchase activity from April 2, 2023 to July 1, 2023, purchasing a total of 102,673 shares at an average price of $94,569 per share."
+}
+</code></pre>
+
+<h3 id="get-summary">GET SUMMARY</h3>
+
+<p><strong>cURL</strong></p>
+
+<pre><code class="language-json">curl -X 'GET' 'https://dev2.copilot.weav.ai/file-service/documents/66e0f8993c95029325001a78/summary' \
+--header 'Accept: application/json' \
+--header 'Authorization: Bearer &lt;your token&gt;'
+</code></pre>
+
+<p><strong>Response</strong></p>
+
+<pre><code class="language-json">{
+   "summary_status":"READY",
+   "summary":"Apple Inc.'s Q3 2023 report shows a slight decrease in net sales primarily due to lower sales of iPad and iPhone, offset by higher sales of Services. The company announced new products including the 15-inch MacBook Air, Mac Studio, Mac Pro, and Apple Vision Pro. Apple repurchased 365 million shares for $56.1 billion and paid dividends of $3.8 billion. The company is involved in legal proceedings with Epic Games, with the court ruling in favor of Apple on nine out of ten counts. However, certain provisions of Apple's App Store Review Guidelines were found to violate California's unfair competition law. The company also conducted share repurchase activity from April 2, 2023 to July 1, 2023, purchasing a total of 102,673 shares at an average price of $94,569 per share.",
+   "redacted_summary":"Apple Inc.'s Q3 2023 report shows a slight decrease in net sales primarily due to lower sales of iPad and iPhone, offset by higher sales of Services. The company announced new products including the 15-inch MacBook Air, Mac Studio, Mac Pro, and Apple Vision Pro. Apple repurchased 365 million shares for $56.1 billion and paid dividends of $3.8 billion. The company is involved in legal proceedings with Epic Games, with the court ruling in favor of Apple on nine out of ten counts. However, certain provisions of Apple's App Store Review Guidelines were found to violate California's unfair competition law. The company also conducted share repurchase activity from April 2, 2023 to July 1, 2023, purchasing a total of 102,673 shares at an average price of $94,569 per share."
+}
+</code></pre>
+
+<h3 id="get-page">GET PAGE</h3>
+
+<p>You can also fetch the information of a document by it’s page number. Shown below is an example of retrieving information from Page 1</p>
+
+<p><strong>cURL</strong></p>
+
+<pre><code class="language-json">curl -X 'GET' 'https://dev2.copilot.weav.ai/file-service/documents/66e0f8993c95029325001a78/pages/1?bounding_boxes=false' \
+--header 'Accept: application/json' \
+--header 'Authorization: Bearer &lt;your token&gt;'
+</code></pre>
+
+<p><strong>Response</strong></p>
+
+<pre><code class="language-json">{
+   "page_number":1,
+   "media_type":"image/jpeg",
+   "download_url":"/doc-proc-service/local_store/google-oauth2|117349365869611297391/66e0f8993c95029325001a78/1.jpg",
+   "page_text":"9/6/23, 9:57 AM\naapl-20230701\nIndicate by check mark whether the Registrant has submitted electronically every Interactive Data File required to be submitted pursuant to Rule 405 of Regulation S-T (§232.405 of this chapter) during the preceding 12 months (or for such shorter period that the Registrant was required to submit such files).\nYes :selected: :unselected: No\nIndicate by check mark whether the Registrant is a large accelerated filer, an accelerated filer, a non-accelerated filer, a smaller reporting company, or an emerging growth company. See the definitions of \"large accelerated filer,\" \"accelerated filer,\" \"smaller reporting company,\" and \"emerging growth company\" in Rule 12b-2 of the Exchange Act.\nLarge accelerated filer :selected:\nAccelerated filer :unselected:\nNon-accelerated filer :unselected:\nSmaller reporting company :unselected:\nEmerging growth company :unselected:\nIf an emerging growth company, indicate by check mark if the Registrant has elected not to use the extended transition period for complying with any new or revised financial accounting standards provided pursuant to Section 13(a) of the Exchange Act. :unselected:\nIndicate by check mark whether the Registrant is a shell company (as defined in Rule 12b-2 of the Exchange Act). :unselected: Yes :selected: No\n15,634,232,000 shares of common stock were issued and outstanding as of July 21, 2023.\nhttps://www.sec.gov/Archives/edgar/data/320193/000032019323000077/aapl-20230701.htm\n2/31",
+   "status":"VECTORIZATION_DONE",
+   "step_status":{
+      "classification":{
+         "status":"DONE",
+         "modified_at":"2024-09-09T21:25:14Z"
+      },
+      "entity_extraction":{
+         "status":"DONE",
+         "modified_at":"2024-09-09T21:25:34Z"
+      },
+      "vectorization":{
+         "status":"DONE",
+         "modified_at":"2024-09-09T21:25:40Z"
+      },
+      "OCR":{
+         "status":"DONE",
+         "modified_at":"2024-09-09T21:25:08Z"
+      }
+   },
+   "classification":{
+      "page_class":"Company Filing Information",
+      "page_sections":[
+         "Interactive Data File Submission",
+         "Company Classification",
+         "Emerging Growth Company Status",
+         "Shell Company Status",
+         "Common Stock Issuance"
+      ],
+      "page_no":2
+   },
+   "extracted_entities":[
+      {
+         "entity_group":"default",
+         "entities":[
+            {
+               "polygon":[
+                  
+               ],
+               "key":"Date",
+               "value":"9/6/23, 9:57 AM",
+               "label":"Document Timestamp",
+               "is_sensitive":false
+            },
+            {
+               "polygon":[
+                  
+               ],
+               "key":"Document ID",
+               "value":"aapl-20230701",
+               "label":"Document Identifier",
+               "is_sensitive":false
+            },
+            {
+               "polygon":[
+                  
+               ],
+               "key":"Interactive Data File Submission",
+               "value":"Yes",
+               "label":"Interactive Data File Submission Status",
+               "is_sensitive":false
+            },
+            {
+               "polygon":[
+                  
+               ],
+               "key":"Registrant Type",
+               "value":"Large accelerated filer",
+               "label":"Type of Registrant",
+               "is_sensitive":false
+            },
+            {
+               "polygon":[
+                  
+               ],
+               "key":"Shell Company Status",
+               "value":"No",
+               "label":"Shell Company Status",
+               "is_sensitive":false
+            },
+            {
+               "polygon":[
+                  
+               ],
+               "key":"Shares Issued",
+               "value":"15,634,232,000",
+               "label":"Number of Shares Issued",
+               "is_sensitive":false
+            },
+            {
+               "polygon":[
+                  
+               ],
+               "key":"Date of Shares Issued",
+               "value":"July 21, 2023",
+               "label":"Date of Shares Issued",
+               "is_sensitive":false
+            },
+            {
+               "polygon":[
+                  
+               ],
+               "key":"Source",
+               "value":"https://www.sec.gov/Archives/edgar/data/320193/000032019323000077/aapl-20230701.htm",
+               "label":"Source URL",
+               "is_sensitive":false
+            }
+         ]
+      }
+   ],
+   "sensitive_words":[
+      
+   ],
+   "summary":"The document with ID 'aapl-20230701' was submitted on 9/6/23 at 9:57 AM. The registrant has submitted all required Interactive Data Files electronically and is identified as a large accelerated filer. The registrant is not a shell company. As of July 21, 2023, there were 15,634,232,000 shares of common stock issued and outstanding. The document can be accessed at the provided SEC Archives URL.",
+   "redacted_summary":"The document with ID 'aapl-20230701' was submitted on 9/6/23 at 9:57 AM. The registrant has submitted all required Interactive Data Files electronically and is identified as a large accelerated filer. The registrant is not a shell company. As of July 21, 2023, there were 15,634,232,000 shares of common stock issued and outstanding. The document can be accessed at the provided SEC Archives URL."
+}
+</code></pre>
+
+<h3 id="get-words-from-particular-page-in-document">GET WORDS FROM PARTICULAR PAGE IN DOCUMENT</h3>
+
+<p><strong>cURL</strong></p>
+
+<pre><code class="language-bash">curl --location 'https://dev2.copilot.weav.ai/file-service/documents/66e0f8993c95029325001a78/pages/1/words' \
+--header 'Accept: application/json' \
+--header 'Authorization: Bearer &lt;your token&gt;'
+
+</code></pre>
+
+<p><strong>Response</strong></p>
+
+<pre><code class="language-bash">{
+  "page_number": 1,
+  "media_type": "NONE",
+  "page_text": "9/6/23, 9:57 AM\naapl-20230701\nIndicate by check mark whether the Registrant has submitted electronically every Interactive Data File required to be submitted pursuant to Rule 405 of Regulation S-T (§232.405 of this chapter) during the preceding 12 months (or for such shorter period that the Registrant was required to submit such files).\nYes :selected: :unselected: No\nIndicate by check mark whether the Registrant is a large accelerated filer, an accelerated filer, a non-accelerated filer, a smaller reporting company, or an emerging growth company. See the definitions of \"large accelerated filer,\" \"accelerated filer,\" \"smaller reporting company,\" and \"emerging growth company\" in Rule 12b-2 of the Exchange Act.\nLarge accelerated filer :selected:\nAccelerated filer :unselected:\nNon-accelerated filer :unselected:\nSmaller reporting company :unselected:\nEmerging growth company :unselected:\nIf an emerging growth company, indicate by check mark if the Registrant has elected not to use the extended transition period for complying with any new or revised financial accounting standards provided pursuant to Section 13(a) of the Exchange Act. :unselected:\nIndicate by check mark whether the Registrant is a shell company (as defined in Rule 12b-2 of the Exchange Act). :unselected: Yes :selected: No\n15,634,232,000 shares of common stock were issued and outstanding as of July 21, 2023.\nhttps://www.sec.gov/Archives/edgar/data/320193/000032019323000077/aapl-20230701.htm\n2/31",
+  "status": "NONE",
+  "classification": {
+    "page_class": "Company Filing Information",
+    "page_sections": [
+      "Interactive Data File Submission",
+      "Company Classification",
+      "Emerging Growth Company Status",
+      "Shell Company Status",
+      "Common Stock Information"
+    ],
+    "page_no": 2
+  },
+  "extracted_entities": [
+    {
+      "entity_group": "default",
+      "entities": [
+        {
+          "polygon": [],
+          "key": "Date",
+          "value": "9/6/23, 9:57 AM",
+          "label": "Document Date",
+          "is_sensitive": false
+        },
+        {
+          "polygon": [],
+          "key": "Document ID",
+          "value": "aapl-20230701",
+          "label": "Document Identifier",
+          "is_sensitive": false
+        },
+		    {...},
+		    {...},
+		    .
+		    .
+			  {...}
+      ]
+    }
+  ],
+  "redacted_summary": "",
+  "words": [
+    {
+      "content": "9/6/23,",
+      "polygon": [
+        {
+          "x": 71,
+          "y": 42
+        },
+        {
+          "x": 135,
+          "y": 43
+        },
+        {
+          "x": 136,
+          "y": 66
+        },
+        {
+          "x": 71,
+          "y": 66
+        }
+      ],
+      "span": {
+        "offset": 0,
+        "length": 7
+      },
+      "confidence": 0.994
+    },
+    {...},
+    {...},
+    .
+    .
+	  {...}
+      ],
+      "span": {
+        "offset": 1474,
+        "length": 4
+      },
+      "confidence": 0.993
+    }
+  ]
+}
+</code></pre>
+
+<h3 id="delete-document">DELETE DOCUMENT</h3>
+
+<p><strong>cURL</strong></p>
+
+<pre><code class="language-json">curl -X 'DELETE' 'https://dev2.copilot.weav.ai/file-service/documents/66e0f8993c95029325001a78' \
+--header 'Accept: application/json' \
+--header 'Authorization: Bearer &lt;your token&gt;'
+</code></pre>
+
+<p><strong>Response</strong></p>
+
+<pre><code class="language-json">{
+   "_id":"66e0f8993c95029325001a78",
+   "media_type":"application/pdf",
+   "download_url":"/doc-proc-service/local_store/google-oauth2|117349365869611297391/66e0f8993c95029325001a78/66e0f8993c95029325001a78",
+   "pages":[
+      
+   ],
+   "status":"PROCESSING",
+   "file_name":"AAPL_10Q.pdf",
+   "created_at":"2024-09-09T21:39:04Z",
+   "size":654929,
+   "source":"application",
+   "step_status":{
+      "FORM_EXTRACTION":{
+         "status":"NOT_STARTED",
+         "modified_at":"2024-09-09T21:39:04Z"
+      }
+   },
+   "in_folders":[
+      
+   ],
+   "tags":[
+      
+   ],
+   "ai_tags":[
+      
+   ],
+   "user_id":"google-oauth2|117349365869611297391",
+   "tenant_id":""
+}
+</code></pre>
+
+<p><img src="/assets/libdoc/img/sampleImages/tutorial1/5.png" alt="Screenshot 2024-09-09 at 4.25.03 PM.png" /></p>
+
+<p>Once, the document is deleted, if the API is called again, you would receive the following response</p>
+
+<pre><code class="language-json">{"message":"Could not find the identifier"}
+</code></pre>
+
+<h3 id="create-folder">CREATE FOLDER</h3>
+
+<p>Let’s create a folder named ‘Test Folder’</p>
+
+<p><strong>cURL</strong></p>
+
+<pre><code class="language-json">curl --location 'https://dev2.copilot.weav.ai/file-service/folders/' \
+--header 'Content-Type: application/json' \
+--header 'Accept: application/json' \
+--header 'Authorization: Bearer &lt;your token&gt;' \
+--data '{
+  "name": "Test Folder"
+}'
+</code></pre>
+
+<p><strong>Response</strong></p>
+
+<pre><code class="language-json">{
+   "_id":"66e0f93093798ee1c937e39a",
+   "documents":null,
+   "document_ids":[
+      
+   ],
+   "shared_with_users":{
+      
+   },
+   "shared_with_groups":{
+      
+   },
+   "name":"Test Folder",
+   "category":"",
+   "description":"",
+   "created_at":"2024-09-09T21:47:33Z",
+   "modified_at":"2024-09-09T21:47:33.442789Z",
+   "workflow":{
+      "workflow_id":"process_document",
+      "form_id":"",
+      "workflow_params":{
+         
+      }
+   },
+   "user_id":"google-oauth2|117349365869611297391",
+   "tenant_id":""
+}
+</code></pre>
+
+<p>You should see that a folder named <code>Test Folder</code> has been created</p>
+
+<p><img src="/assets/libdoc/img/sampleImages/tutorial1/6.jpg" alt="New folder created.jpg" /></p>
+
+<p>However, once we click on the folder, we observe that the folder does not contain any document.</p>
+
+<p><img src="/assets/libdoc/img/sampleImages/tutorial1/7.png" alt="No file.jpg" /></p>
+
+<p><img src="/assets/libdoc/img/sampleImages/tutorial1/8.png" alt="Screenshot 2024-09-10 at 7.09.59 PM.png" /></p>
+
+<p>Similar to before, the <code>folder_id</code> can be obtained from the URL when we click on the folder as seen above.</p>
+
+<p>Next, let’s upload a document in the required folder</p>
+
+<h3 id="upload-document-in-folder">UPLOAD DOCUMENT IN FOLDER</h3>
+
+<p>This is similar to uploading a new document, however, observe that a new parameter <code>folder_id</code> is added to the request</p>
+
+<p><strong>cURL</strong></p>
+
+<pre><code class="language-json">curl -X 'POST' '[https://dev2.copilot.weav.ai/file-service/documents/](http://localhost:7015/documents/)' \
+--header 'Content-Type: multipart/form-data' \
+--header 'Accept: application/json' \
+--header 'Authorization: Bearer &lt;your token&gt;' \
+--form 'file_uploaded=@"AAPL_10Q.pdf"' \
+--form 'folder_id="66e0f93093798ee1c937e39a"'
+</code></pre>
+
+<p><strong>Response</strong></p>
+
+<pre><code class="language-json">{
+  "_id": "66e0fba3089fbd21c4dd80c3",
+  "media_type": "application/pdf",
+  "download_url": "/doc-proc-service/local_store/google-oauth2|117349365869611297391/66e0fba3089fbd21c4dd80c3/66e0fba3089fbd21c4dd80c3",
+  "pages": [],
+  "status": "NEW",
+  "file_name": "AAPL_10Q.pdf",
+  "created_at": "2024-09-11T02:08:35Z",
+  "size": 654929,
+  "source": "application",
+  "step_status": {
+    "FORM_EXTRACTION": {
+      "status": "NOT_STARTED",
+      "modified_at": "2024-09-11T02:08:35Z"
+    }
+  },
+  "in_folders": [],
+  "tags": [],
+  "ai_tags": [],
+  "user_id": "google-oauth2|117349365869611297391",
+  "tenant_id": ""
+}
+</code></pre>
+
+<p>You should see folder now contains an icon on the top right which indicates a document is present inside it.</p>
+
+<p><img src="/assets/libdoc/img/sampleImages/tutorial1/9.png" alt="Screenshot 2024-09-09 at 3.04.42 PM.png" /></p>
+
+<p>Upon clicking the folder we observe that the document is now inside the folder</p>
+
+<p><img src="/assets/libdoc/img/sampleImages/tutorial1/10.png" alt="Screenshot 2024-09-09 at 4.42.47 PM.png" /></p>
+
+<p>We can retrieve the folder ID and file ID from the URL as before or from the <code>_id</code> fields of the respective responses</p>
+
+<p><img src="/assets/libdoc/img/sampleImages/tutorial1/11.png" alt="Screenshot 2024-09-10 at 7.11.00 PM.png" /></p>
+
+<h3 id="get-documents-in-a-folder">Get Documents in a Folder</h3>
+
+<p><strong>cURL</strong></p>
+
+<pre><code class="language-bash">curl --location 'https://dev2.copilot.weav.ai/file-service/documents/?query=&amp;folder_id=66e0f93093798ee1c937e39a&amp;only_non_nested=true&amp;skip=0&amp;limit=100&amp;all=false' \
+--header 'Accept: application/json' \
+--header 'Authorization: Bearer &lt;your token&gt;'
+</code></pre>
+
+<p><strong>Response</strong></p>
+
+<pre><code class="language-bash">{
+  "docs": [
+    {
+      "_id": "66e0fba3089fbd21c4dd80c3",
+      "media_type": "application/pdf",
+      "download_url": "/doc-proc-service/local_store/google-oauth2|117349365869611297391/66e0fba3089fbd21c4dd80c3/66e0fba3089fbd21c4dd80c3",
+      "status": "AI_READY",
+      "file_name": "AAPL_10Q.pdf",
+      "created_at": "2024-09-09T23:42:36Z",
+      "size": 654929,
+      "source": "application",
+      "category": "SECURITIES AND EXCHANGE COMMISSION",
+      "in_folders": [
+        "66e0fba3089fbd21c4dd80c3"
+      ],
+      "tags": [],
+      "ai_tags": [],
+      "user_id": "google-oauth2|117349365869611297391",
+      "tenant_id": ""
+    }
+  ],
+  "total": 1
+}
+</code></pre>
+
+<h3 id="get-document-categories">GET DOCUMENT CATEGORIES</h3>
+
+<p><strong>cURL</strong></p>
+
+<pre><code class="language-bash">curl --location 'https://dev2.copilot.weav.ai/file-service/documents/categories/' \
+--header 'Accept: application/json' \
+--header 'Authorization: Bearer &lt;your token&gt;'
+
+</code></pre>
+
+<p><strong>Response</strong></p>
+
+<pre><code class="language-bash">{"categories":["SECURITIES AND EXCHANGE COMMISSION"]}
+</code></pre>
+
+<h3 id="get-all-document-ids-from-a-folder">GET ALL DOCUMENT IDs FROM A FOLDER</h3>
+
+<p><strong>cURL</strong></p>
+
+<pre><code class="language-bash">curl --location 'https://dev2.copilot.weav.ai/file-service/folders/files/?query=&amp;folder_id=66e0f93093798ee1c937e39a&amp;only_non_nested=true' \
+--header 'Accept: application/json' \
+--header 'Authorization: Bearer &lt;your token&gt;'
+
+</code></pre>
+
+<p><strong>Response</strong></p>
+
+<pre><code class="language-bash">{"document_ids":["66e0fba3089fbd21c4dd80c3"]}
+</code></pre>
+
+<h3 id="semantic-search">SEMANTIC SEARCH</h3>
+
+<p>Searching a document inside a folder</p>
+
+<p><strong>cURL</strong></p>
+
+<pre><code class="language-json">curl -X 'POST' 'https://dev2.copilot.weav.ai/search-service/search' \
+--header 'Content-Type: application/json' \
+--header 'Accept: application/json' \
+--header 'Authorization: Bearer &lt;your token&gt;' \
+--data '{
+  "search_query": "What does the Apple contract state?",
+  "search_config": {
+    "scope": "all_documents",
+    "types": [
+      "semantic",
+      "internet"
+    ]
+  },
+  "file_ids": [
+    "66e0fba3089fbd21c4dd80c3"
+  ],
+  "folder_ids": [
+    "66e0f93093798ee1c937e39a"
+  ]
+}'
+</code></pre>
+
+<p><strong>Response</strong></p>
+
+<pre><code class="language-json">{
+   "type":"data",
+   "results":[
+      {
+         "text":"Company(Company Name): Apple Inc.",
+         "file_id":"66e0fba3089fbd21c4dd80c3",
+         "folder_id":"66e0f93093798ee1c937e39a",
+         "page_nr":2,
+         "score":0.85080373,
+         "rank":1,
+         "file_name":"AAPL_10Q.pdf",
+         "classification":{
+            "page_class":"Apple Inc. Form 10-Q For the Fiscal Quarter Ended July 1, 2023",
+            "page_sections":[
+               "Financial Statements",
+               "Management's Discussion and Analysis of Financial Condition and Results of Operations",
+               "Quantitative and Qualitative Disclosures About Market Risk",
+               "Controls and Procedures",
+               "Legal Proceedings",
+               "Risk Factors",
+               "Unregistered Sales of Equity Securities, Use of Proceeds, and Issuer Purchases of Equity Securities",
+               "Defaults Upon Senior Securities",
+               "Mine Safety Disclosures",
+               "Other Information",
+               "Exhibits"
+            ],
+            "page_no":31
+         },
+         "result_type":"semantic",
+         "section_headers":[
+            
+         ],
+         "tags":null
+      },
+	    {...},
+	    .
+	    .
+	    .
+	    {...}
+   ],
+   "text":{
+      "message_code":"success"
+   }
+}
+</code></pre>
+
+<p><strong>Searching only by document</strong></p>
+
+<p><strong>cURL</strong></p>
+
+<pre><code class="language-json">curl -X 'POST' 'https://dev2.copilot.weav.ai/search-service/search' \
+--header 'Content-Type: application/json' \
+--header 'Accept: application/json' \
+--header 'Authorization: Bearer &lt;your token&gt;' \
+--data '{
+  "search_query": "What does the Apple contract state?",
+  "search_config": {
+    "scope": "all_documents",
+    "types": [
+      "semantic",
+      "internet"
+    ]
+  },
+  "file_ids": [
+    "66e0fba3089fbd21c4dd80c3"
+  ]
+}'
+</code></pre>
+
+<p><strong>Searching in all folders</strong></p>
+
+<p><strong>cURL</strong></p>
+
+<pre><code class="language-json">curl -X 'POST' 'https://dev2.copilot.weav.ai/search-service/search' \
+--header 'Content-Type: application/json' \
+--header 'Accept: application/json' \
+--header 'Authorization: Bearer &lt;your token&gt;' \
+--data '{
+  "search_query": "What does the Apple contract state?",
+  "search_config": {
+    "scope": "all_documents",
+    "types": [
+      "semantic",
+      "internet"
+    ]
+  },
+"folder_ids": [
+    "66e0f93093798ee1c937e39a"
+  ]
+}'
+</code></pre>
+
+<h3 id="get-search-summary">GET SEARCH SUMMARY</h3>
+
+<p>To get the summary of the search results, the data from <code>results</code> field and the original <code>search_query</code> is passed as data to the search summary API</p>
+
+<p><strong>cURL</strong></p>
+
+<pre><code class="language-bash">curl -X 'POST' 'https://dev2.copilot.weav.ai/search-service/summarize_search' \
+--header 'Content-Type: application/json' \
+--header 'Accept: application/json' \
+--header 'Authorization: Bearer &lt;your token&gt;' \
+--data '{
+   "search_query":"Summarize this data?",
+   "results":[
+      {
+         "text":"Company(Company Name): Apple Inc.",
+         "file_id":"66e0fba3089fbd21c4dd80c3",
+         "folder_id":"66e0fba3089fbd21c4dd80c3",
+         "page_nr":2,
+         "score":0.85080373,
+         "rank":1,
+         "file_name":"AAPL_10Q.pdf",
+         "classification":{
+            "page_class":"Apple Inc. Form 10-Q For the Fiscal Quarter Ended July 1, 2023",
+            "page_sections":[
+               "Financial Statements",
+               "Managements Discussion and Analysis of Financial Condition and Results of Operations",
+               "Quantitative and Qualitative Disclosures About Market Risk",
+               "Controls and Procedures",
+               "Legal Proceedings",
+               "Risk Factors",
+               "Unregistered Sales of Equity Securities, Use of Proceeds, and Issuer Purchases of Equity Securities",
+               "Defaults Upon Senior Securities",
+               "Mine Safety Disclosures",
+               "Other Information",
+               "Exhibits"
+            ],
+            "page_no":31
+         },
+         "result_type":"semantic",
+         "section_headers":[
+            
+         ],
+         "tags":null
+      }
+   ],
+   "response_format":"concise",
+   "stream":false
+}'
+</code></pre>
+
+<p><strong>Response</strong></p>
+
+<pre><code class="language-bash">{
+  "summary": "The document \"AAPL_10Q.pdf\" is related to the company Apple Inc.[1]"
+}
+</code></pre>
+
+        </div>
+    </div>
+    <div id="libdoc-toc-container" class="m-fw-mini c-position m-top-right m-anchor-top-left u-bc-primary-edge u-z-10" u-fixed="sm" u-none="sm"></div>
+</main>
+        </div>
+        <footer class="u-p-lg u-fs-sm u-c-primary-alt u-mt-md">
+            <nav class="c-grid m-space-between m-bottom">
+                <ul class="u-ls-none u-mb-md--sm">
+                    <li>
+                        <a href="http://localhost:4000" class="c-btn m-translucid u-pl-none">weav.ai developer documentation</a><br>
+                        weav.ai provides a number of useful and abstracted REST API’s to interact with the platform that make it easy and convenient to build your own workflows and functionality. 
+                    </li>
+                    
+                </ul>
+                
+            </nav>
+        </footer>
+        <script type="text/javascript" src="/assets/libdoc/js/prism/prism-core.min.js"></script>
+        
+            <script type="text/javascript" src="http://localhost:4000/assets/libdoc/js/prism/prism-markup.min.js"></script>
+        
+            <script type="text/javascript" src="http://localhost:4000/assets/libdoc/js/prism/prism-css.min.js"></script>
+        
+            <script type="text/javascript" src="http://localhost:4000/assets/libdoc/js/prism/prism-clike.min.js"></script>
+        
+            <script type="text/javascript" src="http://localhost:4000/assets/libdoc/js/prism/prism-javascript.min.js"></script>
+        
+            <script type="text/javascript" src="http://localhost:4000/assets/libdoc/js/prism/prism-markdown.min.js"></script>
+        
+            <script type="text/javascript" src="http://localhost:4000/assets/libdoc/js/prism/prism-scss.min.js"></script>
+        
+            <script type="text/javascript" src="http://localhost:4000/assets/libdoc/js/prism/prism-yaml.min.js"></script>
+        
+        <script type="text/javascript" src="/assets/libdoc/js/my-toggles.js"></script>
+        <script type="text/javascript" src="/assets/libdoc/js/template.js"></script>
+        <script type="text/javascript" src="/assets/libdoc/js/playground.js"></script>
+
+        <aside my-toggle-name="libdoc-modal" class="c-position m-fixed m-top-left u-w-100 u-h-100 u-z-100">
+            <div class="c-grid m-center m-middle m-position m-fixed m-top-left u-w-100 u-h-100">
+                <div class="c-position m-fixed m-top-left u-w-100 u-h-100 u-cur-pointer u-bc-primary-alt u-faded" my-toggle="libdoc-modal"></div>
+                <div class="u-bc-primary-max u-brad-md u-relative u-b-thin-dashed-alt u-mh-100vh u-o-auto">
+                    <header class="c-grid m-nowrap m-middle u-bb-thin-dashed-alt">
+                        <h4 id="libdoc-modal-title" class="m-grow u-pl-sm">Playground settings</h4>
+                        <nav>
+                            <button class="c-btn u-p-sm u-bl-thin-dashed-alt" my-toggle="libdoc-modal">Close <span class="i-x u-ml-xs"></span></button>
+                        </nav>
+                    </header>
+                    <div id="libdoc-modal-content" class="u-p-lg" u-pl-md="sm" u-pr-md="sm">content</div>
+                </div>
+            </div>
+        </aside>
+    </body>
+</html>

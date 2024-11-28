@@ -1,0 +1,5 @@
+# Define where each category should link to
+categories:
+  "Scripts": "/docs/platform/intro.html"
+  "Platform tutorials": "/docs/platform/tutorials/intro.html"
+  "Developer library": "/docs/developer_library/intro.html"

@@ -1,0 +1,112 @@
+/**
+ * prism.js WEAV.AI theme with specific hex colors
+ * Custom theme using the specified hex palette.
+ */
+
+/* Base styles */
+code[class*="language-"],
+pre[class*="language-"] {
+    color: #FFFFFF !important; /* Text color: White */
+    background: #45a1ff; /* Background: Blue */
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    font-size: 1em;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+    tab-size: 4;
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+}
+
+/* Ensure all pre and code elements default to white text */
+pre[class*="language-"],
+:not(pre) > code[class*="language-"] {
+    color: #FFFFFF !important; /* Override default black text */
+    background: #45a1ff !important; /* Ensure consistent background */
+}
+
+/* Code block container */
+pre[class*="language-"] {
+    border-radius: 8px;
+    border: 2px solid #45a1ff; /* Highlight border */
+    box-shadow: 0 0 10px rgba(2, 127, 255, 0.6);
+    margin: 1em 0;
+    overflow: auto;
+    padding: 1em;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+    background: #FFFFFF; /* White background for inline code */
+    border-radius: 5px;
+    border: 1px solid #45a1ff; /* Blue border */
+    padding: 0.2em 0.4em;
+    color: #45a1ff; /* Blue text for inline code */
+}
+
+/* Token styles */
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+    color: #6c6c6c !important; /* Muted gray for comments */
+    font-style: italic;
+}
+
+.token.punctuation {
+    color: #FFFFFF !important; /* White punctuation */
+}
+
+.token.tag,
+.token.keyword,
+.token.selector,
+.token.constant {
+    color: #FFFFFF !important; /* White for important tokens */
+    font-weight: bold;
+}
+
+.token.property,
+.token.symbol,
+.token.number,
+.token.boolean {
+    color: #FFFFFF !important; /* Ensure white for properties and numbers */
+}
+
+.token.string,
+.token.char,
+.token.variable,
+.token.inserted {
+    color: #45a1ff !important; /* Blue for strings and variables */
+}
+
+.token.operator {
+    color: #FFFFFF !important; /* White operators */
+}
+
+.token.regex,
+.token.important {
+    color: #45a1ff !important; /* Blue regex */
+    font-weight: bold;
+}
+
+.token.atrule {
+    color: #FFFFFF !important; /* White atrules */
+}
+
+/* Line highlight */
+.line-highlight {
+    background: rgba(2, 127, 255, 0.1); /* Slightly transparent blue highlight */
+    border-left: 4px solid #45a1ff; /* Highlight accent */
+}
+
+/* Data line numbers */
+.line-highlight:before {
+    background: #45a1ff; /* Blue number bubble */
+    color: #FFFFFF !important; /* White number text */
+    padding: 0.2em 0.5em;
+    border-radius: 3px;
+}

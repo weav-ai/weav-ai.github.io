@@ -1,0 +1,147 @@
+<!-- {% assign sorted_pages = site.sidebar.additional_links | default: [] | sort: "order" %}
+{% assign previous_category = "_" %}
+{% assign item_index = 0 %}
+
+{% for sorted_page in sorted_pages | sort: "category" %}
+    {% assign category_displayed = false %}
+    {% if sorted_page.category != previous_category and sorted_page.category|strip != '' and sorted_page.separator != true %}
+        <li class="c-grid m-right u-bt-thin-dashed-alt {% if item_index > 0 %}u-mt-xs{% endif %}">
+            <div class="u-p-xxs u-pr-sm u-pl-sm u-fs-xs u-bc-primary-edge u-lh-base u-bl-thin-dashed-alt u-bb-thin-dashed-alt c-text m-ff-monospace m-nowrap u-c-primary-alt" u-fs-xxs="sm">
+                {{ sorted_page.category }}
+            </div>
+        </li>
+        {% assign category_displayed = true %}
+    {% elsif sorted_page.separator == true %}
+        <li class="c-grid m-right u-bt-thin-dashed-alt u-mt-xs u-mb-xs"></li>
+    {% endif %}
+    {% assign previous_category = sorted_page.category %}
+    {% if sorted_page.unlisted != true %}
+        <li class="u-relative u-o-hidden libdoc-sidebar-item {% if page.url == sorted_page.url %}libdoc-sidebar-current-item{% endif %}">
+            {% if page.title == sorted_page.title %}{% endif %}
+            <a  href="{{ sorted_page.url | relative_url | default: '#' }}"
+                class="c-btn m-translucid m-block-right {% if page.url == sorted_page.url %}u-br-large-solid{% else %}m-ff-lead{% endif %} u-ta-right  {% if category_displayed == false and item_index == 0 %}u-mt-xs{% endif %}"
+                u-fs-xs="sm,md"
+                u-p-xs="sm,md"
+                data-iframe-mode="{{ sorted_page.iframe_mode }}"
+                data-category="{{ sorted_page.category }}">
+                {% if sorted_page.title %}
+                    {{ sorted_page.title }}
+                {% else %}
+                    {{ sorted_page.name}}
+                {% endif %}
+            </a>
+        </li>
+        {% assign item_index = item_index | plus: 1 %}
+    {% endif %}
+{% endfor %} -->
+
+<!-- {% assign sorted_pages = site.sidebar.additional_links | default: [] | sort: "order" %}
+{% assign previous_category = "_" %}
+{% assign item_index = 0 %}
+
+{% for sorted_page in sorted_pages | sort: "category" %}
+    {% assign category_displayed = false %}
+    {% if sorted_page.category != previous_category and sorted_page.category|strip != '' and sorted_page.separator != true %}
+        {% assign category_url = site.data.category_links.categories[sorted_page.category] %}
+        <li class="c-grid m-right u-bt-thin-dashed-alt {% if item_index > 0 %}u-mt-xs{% endif %}">
+            <a href="{{ category_url | relative_url }}" 
+               class="u-p-xxs u-pr-sm u-pl-sm u-fs-xs u-bc-primary-edge u-lh-base u-bl-thin-dashed-alt u-bb-thin-dashed-alt c-text m-ff-monospace m-nowrap u-c-primary-alt hover:u-bc-primary-fade w-full block cursor-pointer" 
+               u-fs-xxs="sm"
+               style="cursor: pointer; text-decoration: none;">
+                {{ sorted_page.category }}
+            </a>
+        </li>
+        {% assign category_displayed = true %}
+    {% elsif sorted_page.separator == true %}
+        <li class="c-grid m-right u-bt-thin-dashed-alt u-mt-xs u-mb-xs"></li>
+    {% endif %}
+    {% assign previous_category = sorted_page.category %}
+    {% if sorted_page.unlisted != true %}
+        <li class="u-relative u-o-hidden libdoc-sidebar-item {% if page.url == sorted_page.url %}libdoc-sidebar-current-item{% endif %}">
+            {% if page.title == sorted_page.title %}{% endif %}
+            <a  href="{{ sorted_page.url | relative_url | default: '#' }}"
+                class="c-btn m-translucid m-block-right {% if page.url == sorted_page.url %}u-br-large-solid{% else %}m-ff-lead{% endif %} u-ta-right  {% if category_displayed == false and item_index == 0 %}u-mt-xs{% endif %}"
+                u-fs-xs="sm,md"
+                u-p-xs="sm,md"
+                data-iframe-mode="{{ sorted_page.iframe_mode }}"
+                data-category="{{ sorted_page.category }}">
+                {% if sorted_page.title %}
+                    {{ sorted_page.title }}
+                {% else %}
+                    {{ sorted_page.name}}
+                {% endif %}
+            </a>
+        </li>
+        {% assign item_index = item_index | plus: 1 %}
+    {% endif %}
+{% endfor %} -->
+
+
+{% assign sorted_pages = site.sidebar.additional_links | default: [] | sort: "order" %}
+{% assign category_mappings = site.data.categories.categories %}
+{% assign previous_category = "_" %}
+{% assign item_index = 0 %}
+
+<!-- Debug current mappings -->
+<!-- <script>
+const categoryMappings = {
+    "Scripts": "/docs/platform/intro.html",
+    "Platform tutorials": "/docs/platform/tutorials/intro.html",
+    "Developer library": "/docs/developer_library/intro.html"
+};
+console.log('Available category mappings:', categoryMappings);
+</script> -->
+
+{% for sorted_page in sorted_pages | sort: "category" %}
+    {% assign category_displayed = false %}
+    {% if sorted_page.category != previous_category and sorted_page.category|strip != '' and sorted_page.separator != true %}
+        <li class="c-grid m-right u-bt-thin-dashed-alt {% if item_index > 0 %}u-mt-xs{% endif %}">
+            <a href="javascript:void(0)" 
+               class="u-p-xxs u-pr-sm u-pl-sm u-fs-xs u-bc-primary-edge u-lh-base u-bl-thin-dashed-alt u-bb-thin-dashed-alt c-text m-ff-monospace m-nowrap u-c-primary-alt hover:u-bc-primary-fade w-full block cursor-pointer" 
+               u-fs-xxs="sm"
+               style="cursor: pointer; text-decoration: none;"
+               data-category="{{ sorted_page.category }}"
+               data-url="{% if sorted_page.category == 'Scripts' %}/docs/platform/intro.html{% elsif sorted_page.category == 'Platform tutorials' %}/docs/platform/tutorials/intro.html{% elsif sorted_page.category == 'Developer library' %}/docs/developer_library/intro.html{% endif %}"
+               onclick="handleCategoryClick(this)">
+                {{ sorted_page.category }}
+            </a>
+        </li>
+        {% assign category_displayed = true %}
+    {% elsif sorted_page.separator == true %}
+        <li class="c-grid m-right u-bt-thin-dashed-alt u-mt-xs u-mb-xs"></li>
+    {% endif %}
+    {% assign previous_category = sorted_page.category %}
+    {% if sorted_page.unlisted != true %}
+        <li class="u-relative u-o-hidden libdoc-sidebar-item {% if page.url == sorted_page.url %}libdoc-sidebar-current-item{% endif %}">
+            {% if page.title == sorted_page.title %}{% endif %}
+            <a  href="{{ sorted_page.url | relative_url | default: '#' }}"
+                class="c-btn m-translucid m-block-right {% if page.url == sorted_page.url %}u-br-large-solid{% else %}m-ff-lead{% endif %} u-ta-right  {% if category_displayed == false and item_index == 0 %}u-mt-xs{% endif %}"
+                u-fs-xs="sm,md"
+                u-p-xs="sm,md"
+                data-iframe-mode="{{ sorted_page.iframe_mode }}"
+                data-category="{{ sorted_page.category }}">
+                {% if sorted_page.title %}
+                    {{ sorted_page.title }}
+                {% else %}
+                    {{ sorted_page.name}}
+                {% endif %}
+            </a>
+        </li>
+        {% assign item_index = item_index | plus: 1 %}
+    {% endif %}
+{% endfor %}
+
+<script>
+function handleCategoryClick(element) {
+    const category = element.getAttribute('data-category');
+    const url = element.getAttribute('data-url');
+    console.log('Clicked category:', category);
+    console.log('URL:', url);
+    
+    if (url) {
+        window.location.href = url;
+    } else {
+        console.log('No URL mapping found for category:', category);
+    }
+}
+</script>
